@@ -33,14 +33,6 @@ function SignupPage() {
       .catch((err) => console.log(err));
   };
 
-  function selectOnlyThis(id) {
-    var myCheckbox = document.getElementsByName("myCheckbox");
-    Array.prototype.forEach.call(myCheckbox, function (el) {
-      el.checked = false;
-    });
-    id.checked = true;
-  }
-
 
   return (
     <div>
@@ -73,30 +65,34 @@ function SignupPage() {
           onChange={handleImageUrl}
         />
 
-        <input
-          type="checkbox"
+        <div>
+          <input
+          type="radio"
           name="myCheckbox"
           value="Scrum Master"
-          onChange={(handleRole, selectOnlyThis(this))}
+          onChange={handleRole}
         />
         <label htmlFor="role">Scrum Master</label>
 
         <input
-          type="checkbox"
+          type="radio"
           name="myCheckbox"
           value="Project Owner"
-          onChange={(handleRole, selectOnlyThis(this))}
+          onChange={handleRole}
         />
         <label htmlFor="role">Project Owner</label>
 
         <input
-          type="checkbox"
+          type="radio"
           name="myCheckbox"
           value="Developer"
-          onChange={(handleRole, selectOnlyThis(this))}
+          onChange={handleRole}
         />
 
         <label htmlFor="role">Developer</label>
+        </div>
+
+        
         <button type="submit"> Create Account </button>
 
         <p>
