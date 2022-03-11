@@ -5,16 +5,24 @@ import axios from "axios";
 function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [role, setRole] = useState("");
 
   const navigate = useNavigate();
 
   const handlePassword = (e) => setPassword(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
+  const handleEmail = (e) => setEmail(e.target.value);
+  const handleImageUrl = (e) => setImageUrl(e.target.value);
+  const handleRole = (e) => setRole(e.target.value);
+
+  console.log(role)
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const body = { username, password };
+    const body = { username, password, email, imageUrl, role };
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, body)
@@ -43,7 +51,31 @@ function SignupPage() {
           onChange={handlePassword}
         />
 
-        <button type="submit"> Signup</button>
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" value={email} onChange={handleEmail} />
+
+        <label htmlFor="imageUrl">Profile Pic</label>
+        <input
+          type="file"
+          name="imageUrl"
+          value={imageUrl}
+          onChange={handleImageUrl}
+        />
+        
+        <input type="checkbox" name="role" value="Scrum Master" onChange={handleRole} />
+        <label htmlFor="role">Scrum Master</label>
+        
+        <input type="checkbox" name="role" value="Project Owner" onChange={handleRole} />
+        <label htmlFor="role">Project Owner</label>
+
+        <input type="checkbox" name="role" value="Developer" onChange={handleRole} />
+        
+        <label htmlFor="role">Developer</label>
+        <button type="submit"> Create Account </button>
+
+        <p>
+          Already have an account? <a href="/login">Go to login.</a>
+        </p>
       </form>
     </div>
   );
