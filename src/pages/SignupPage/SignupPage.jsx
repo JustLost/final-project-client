@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,6 +32,16 @@ function SignupPage() {
       })
       .catch((err) => console.log(err));
   };
+
+  function selectOnlyThis(id) {
+    var myCheckbox = document.getElementsByName("myCheckbox");
+    Array.prototype.forEach.call(myCheckbox, function (el) {
+      el.checked = false;
+    });
+    id.checked = true;
+  }
+
+
   return (
     <div>
       <h1>Signup</h1>
@@ -61,15 +72,30 @@ function SignupPage() {
           value={imageUrl}
           onChange={handleImageUrl}
         />
-        
-        <input type="checkbox" name="role" value="Scrum Master" onChange={handleRole} />
+
+        <input
+          type="checkbox"
+          name="myCheckbox"
+          value="Scrum Master"
+          onChange={(handleRole, selectOnlyThis(this))}
+        />
         <label htmlFor="role">Scrum Master</label>
-        
-        <input type="checkbox" name="role" value="Project Owner" onChange={handleRole} />
+
+        <input
+          type="checkbox"
+          name="myCheckbox"
+          value="Project Owner"
+          onChange={(handleRole, selectOnlyThis(this))}
+        />
         <label htmlFor="role">Project Owner</label>
 
-        <input type="checkbox" name="role" value="Developer" onChange={handleRole} />
-        
+        <input
+          type="checkbox"
+          name="myCheckbox"
+          value="Developer"
+          onChange={(handleRole, selectOnlyThis(this))}
+        />
+
         <label htmlFor="role">Developer</label>
         <button type="submit"> Create Account </button>
 
