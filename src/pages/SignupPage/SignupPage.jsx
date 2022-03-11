@@ -71,25 +71,25 @@ function SignupPage() {
           name="myCheckbox"
           value="Scrum Master"
           onChange={handleRole}
-        />
-        <label htmlFor="role">Scrum Master</label>
+          />
+          <label htmlFor="role">Scrum Master</label>
 
-        <input
-          type="radio"
-          name="myCheckbox"
-          value="Project Owner"
-          onChange={handleRole}
-        />
-        <label htmlFor="role">Project Owner</label>
+          <input
+            type="radio"
+            name="myCheckbox"
+            value="Project Owner"
+            onChange={handleRole}
+          />
+          <label htmlFor="role">Project Owner</label>
 
-        <input
-          type="radio"
-          name="myCheckbox"
-          value="Developer"
-          onChange={handleRole}
-        />
+          <input
+            type="radio"
+            name="myCheckbox"
+            value="Developer"
+            onChange={handleRole}
+          />
 
-        <label htmlFor="role">Developer</label>
+          <label htmlFor="role">Developer</label>
         </div>
 
         
