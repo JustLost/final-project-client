@@ -1,27 +1,37 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import "./Navbar.css"
 
 function Navbar() {
     const { loggedIn, user, logoutUser } = useContext(AuthContext);
     return (
       <nav>
-        <Link to="/"> Homepage</Link>
-        {loggedIn && (
-          <>
-            <Link to="/projects"> Projects</Link>
-            {user.username}
-            {/* photo */}
-            <button onClick={logoutUser}>Logout</button>
-          </>
-        )}
+        <div className="nav">
+          <div className="home">
+            <Link to="/"> Homepage</Link>
+          </div>
 
-        {!loggedIn && (
-          <>
-            <Link to="/signup"> Signup</Link>
-            <Link to="/login"> Login</Link>
-          </>
-        )}
+          <div className="nav-left">
+            {loggedIn && (
+            <>
+              <Link to="/projects"> Projects</Link>
+              {user.username}
+              {/* photo */}
+              <button onClick={logoutUser}>Logout</button>
+            </>
+            )}
+          
+            {!loggedIn && (
+            <>
+              <Link to="/signup"> Signup</Link>
+              <Link to="/login"> Login</Link>
+            </>
+            )}
+          </div>
+      </div>
+        
+        
       </nav>
     );
 }

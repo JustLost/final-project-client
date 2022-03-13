@@ -9,6 +9,9 @@ import AddProjectForm from './Components/AddProjectForm/AddProjectForm';
 import AddSprintForm from './Components/AddSprintForm/AddSprintForm';
 import AddTaskForm from './Components/AddTaskForm/AddTaskForm';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage/ProjectDetailsPage'
+import EditProjectPage from './pages/EditProjectPage/EditProjectPage';
+import SprintPage from './pages/SprintPage/SprintPage';
 
 function App() {
   return (
@@ -22,8 +25,9 @@ function App() {
         <Route path="/new/sprint" element={<AddSprintForm />} />
         <Route path="/new/task" element={<AddTaskForm />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        {/* <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<HomePage />} /> */}
+        <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+        <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
+        <Route path="/sprint" element={<SprintPage />} />
       </Routes>
     </div>
   );

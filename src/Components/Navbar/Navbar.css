@@ -1,0 +1,24 @@
+nav{
+    background-color: gainsboro;
+    min-height: 5vh;
+}
+
+.nav{
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+    margin-top: 1v;
+}
+
+.home{
+    align-content: flex-start;
+    margin-left: 2vw;
+}
+
+.nav-left{
+    align-content: flex-end;
+    margin-right: 2vw;
+    justify-content: space-between;
+}
+

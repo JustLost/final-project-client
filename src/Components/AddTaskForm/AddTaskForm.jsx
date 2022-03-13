@@ -9,13 +9,13 @@ function AddTaskForm(props) {
   const [creator, setCreator] = useState("");
   const [assignedTo, setAssinedTo] = useState("");
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
-  const handleTitle = (e) => setTitle(e.target.value);
+  //const handleTitle = (e) => setTitle(e.target.value);
   const handleStatus = (e) => setStatus(e.target.value);
-  const handleDescription = (e) => setDescription(e.target.value);
-  const handleCreator = (e) => setCreator(e.target.value);
-  const handleAssignedTo = (e) => setAssinedTo(e.target.value);
+  //const handleDescription = (e) => setDescription(e.target.value);
+  //const handleCreator = (e) => setCreator(e.target.value);
+  //const handleAssignedTo = (e) => setAssinedTo(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +48,7 @@ function AddTaskForm(props) {
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
 
         <div>
-          <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus} />
+          <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
           <label htmlFor="role">To do</label>
 
           <input type="radio" name="myCheckbox" value="Doing" onChange={handleStatus} />
