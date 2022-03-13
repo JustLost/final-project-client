@@ -28,8 +28,10 @@ function AddTaskForm(props) {
       assignedTo,
     };
 
+    const storedToken = localStorage.getItem('authToken');
+
     axios
-      .post(`${process.env.REACT_APP_API_URL}/projects`, body)
+      .post(`${process.env.REACT_APP_API_URL}/tasks`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
         setTitle("");
         //setSprints("");
@@ -66,11 +68,11 @@ function AddTaskForm(props) {
         <label htmlFor="description">Description</label>
         <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
 
-        <label htmlFor="creator">Creator</label>
-        <input type="time" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} />
+        {/* <label htmlFor="creator">Creator</label>
+        <input type="time" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} /> */}
 
         <label htmlFor="assignTo">Assign To</label>
-        <input type="date" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
+        <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
 
         <button type="submit">Add task</button>
       </form>

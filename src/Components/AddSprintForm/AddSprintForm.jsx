@@ -14,9 +14,10 @@ function AddSprintForm(props) {
     e.preventDefault();
 
     const body = { name, startingDate, duration, standUps, review, tasks, retrospective };
+    const storedToken = localStorage.getItem('authToken');
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/projects`, body)
+      .post(`${process.env.REACT_APP_API_URL}/projects`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
         setName("");
         //setSprints("");
