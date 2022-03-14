@@ -42,7 +42,10 @@ function ProjectDetailsPage() {
           </li>
         ))} */}
 
-      {project && <Link to={`/projects/edit/${project._id}`}>Edit Project</Link>}
+      <div>
+        {project && <button><Link to={`/projects/edit/${project._id}`}>Edit Project</Link></button>}
+      </div>
+      
       <Link to="/projects"> Back to Project List</Link>
     </div>
   );

@@ -14,8 +14,10 @@ function Navbar() {
 
           <div className="nav-left">
             {loggedIn && (
+              
             <>
               <Link to="/projects"> Projects</Link>
+              {user.role}
               {user.username}
               {/* photo */}
               <button onClick={logoutUser}>Logout</button>
