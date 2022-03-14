@@ -23,17 +23,20 @@ function ProjectDetailsPage() {
 
   return (
     <div>
-      <h1>olá</h1>
+      <h1>Project</h1>
       {project && (
         <>
           <h1>{project.name}</h1>
-          <p>{project.description}</p>
+          <h5>{project.description}</h5>
+          <p>{project.sprints}</p>
+          <p>{project.sprintDuration}</p>
+          <p>{project.timestamps}</p>
         </>
       )}
       {/* {project &&
         project.tasks.map((task) => (
           <li key={task._id}>
-            <h3>{task.name}</h3>
+            <h3>{task.title}</h3>
             <h4>Description</h4>
             <p>{task.description}</p>
           </li>

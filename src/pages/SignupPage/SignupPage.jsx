@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -38,60 +37,32 @@ function SignupPage() {
     <div>
       <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleUsername}
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-
-        <label htmlFor="imageUrl">Profile Pic</label>
-        <input
-          type="file"
-          name="imageUrl"
-          value={imageUrl}
-          onChange={handleImageUrl}
-        />
-
         <div>
-          <input
-          type="radio"
-          name="myCheckbox"
-          value="Scrum Master"
-          onChange={handleRole}
-          />
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" value={email} onChange={handleEmail} />
+        </div>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input type="text" name="username" value={username} onChange={handleUsername} />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input type="password" name="password" value={password} onChange={handlePassword} />
+        </div>
+        <div>
+          <label htmlFor="imageUrl">Profile Pic</label>
+          <input type="file" name="imageUrl" value={imageUrl} onChange={handleImageUrl} />
+        </div>
+        <div>
+          <input type="radio" name="radio" value="Scrum Master" onChange={handleRole} />
           <label htmlFor="role">Scrum Master</label>
 
-          <input
-            type="radio"
-            name="myCheckbox"
-            value="Project Owner"
-            onChange={handleRole}
-          />
+          <input type="radio" name="radio" value="Project Owner" onChange={handleRole} />
           <label htmlFor="role">Project Owner</label>
 
-          <input
-            type="radio"
-            name="myCheckbox"
-            value="Developer"
-            onChange={handleRole}
-          />
-
+          <input type="radio" name="radio" value="Developer" onChange={handleRole} />
           <label htmlFor="role">Developer</label>
         </div>
-
         
         <button type="submit"> Create Account </button>
 
@@ -102,5 +73,7 @@ function SignupPage() {
     </div>
   );
 }
+
+
 
 export default SignupPage;

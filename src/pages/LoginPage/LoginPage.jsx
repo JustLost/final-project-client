@@ -34,22 +34,14 @@ function LoginPage() {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleUsername}
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-
+        <div>
+          <label htmlFor="username">Username</label>
+          <input type="text" name="username" value={username} onChange={handleUsername} />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input type="password" name="password" value={password} onChange={handlePassword} />
+        </div>
         <button type="submit"> Login</button>
 
         <p>You don't have an account yet? <a href="/signup">Create one here.</a></p>

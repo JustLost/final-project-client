@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./AddProjectForm.css"
 
 function AddProjectForm(props) {
   const [name, setName] = useState("");
@@ -24,26 +25,35 @@ function AddProjectForm(props) {
   };
 
   return (
-    <div>
+    <div className="add-project">
       <h3>Add Project</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Project Name</label>
-        <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+      <div className="form-box">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Project Name</label>
+            <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          
+          <div>
+            <label htmlFor="description">Description</label>
+            <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          </div>
+          {/* <label htmlFor="sprints">Number of Sprints</label>
+          <input type="text" name="sprints" value={sprints} onChange={(e) => setSprints(e.target.value)} /> */}
 
-        <label htmlFor="description">Description</label>
-        <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <div>
+            <label htmlFor="sprintDuration">Sprint Duration</label>
+            <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
+          </div>
 
-        {/* <label htmlFor="sprints">Number of Sprints</label>
-        <input type="text" name="sprints" value={sprints} onChange={(e) => setSprints(e.target.value)} /> */}
+          <div>
+            <button><a href="/new/task">Add a Task</a></button>
+            <button><a href="/">Add Team</a></button>
+          </div>
 
-        <label htmlFor="sprintDuration">Sprint Duration</label>
-        <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
-
-        <button><a href="/new/task">Add a Task</a></button>
-        <button><a href="/">Add Team</a></button>
-
-        <button type="submit">Add Project</button>
-      </form>
+          <button type="submit">Add Project</button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -48,32 +48,33 @@ function AddTaskForm(props) {
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
 
         <div>
-          <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
-          <label htmlFor="role">To do</label>
-
-          <input type="radio" name="myCheckbox" value="Doing" onChange={handleStatus} />
-          <label htmlFor="role">Doing</label>
-
-          <input type="radio" name="myCheckbox" value="Merge Request" onChange={handleStatus} />
-          <label htmlFor="role">Merge Request</label>
-
-          <input type="radio" name="myCheckbox" value="Blocked" onChange={handleStatus} />
-          <label htmlFor="role">Blocked</label>
-
-          <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
-          <label htmlFor="role">Done</label>
-
+          <label htmlFor="description">Description</label>
+          <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
+        <div>
+          {/* <label htmlFor="creator">Creator</label>
+          <input type="time" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} /> */}
+        </div>
+        <div>
+          <label htmlFor="assignTo">Assign To</label>
+          <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
+        </div>
+        <div>
+            <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
+            <label htmlFor="role">To do</label>
 
-        <label htmlFor="description">Description</label>
-        <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input type="radio" name="myCheckbox" value="Doing" onChange={handleStatus} />
+            <label htmlFor="role">Doing</label>
 
-        {/* <label htmlFor="creator">Creator</label>
-        <input type="time" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} /> */}
+            <input type="radio" name="myCheckbox" value="Merge Request" onChange={handleStatus} />
+            <label htmlFor="role">Merge Request</label>
 
-        <label htmlFor="assignTo">Assign To</label>
-        <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
+            <input type="radio" name="myCheckbox" value="Blocked" onChange={handleStatus} />
+            <label htmlFor="role">Blocked</label>
 
+            <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
+            <label htmlFor="role">Done</label>
+        </div>
         <button type="submit">Add task</button>
       </form>
     </div>

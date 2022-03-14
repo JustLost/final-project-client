@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AddProjectForm from "../../Components/AddProjectForm/AddProjectForm";
+import "./ProjectsPage.css"
 //import { ThemeContext } from '../../context/theme.context';
 
 function ProjectsPage() {
@@ -28,16 +29,24 @@ function ProjectsPage() {
 
   return (
     <div className={"ProjectsPage "}>
-      <AddProjectForm refreshProjects={fetchProjects} />
-      {projects.map((project) => {
-        return (
-          <div key={project._id}>
-            <Link to={`/projects/${project._id}`}>
-              <h3>{project.name}</h3>
-            </Link>
-          </div>
-        );
-      })}
+      
+      <div>
+        <h1>Projects list</h1>      
+        {projects.map((project) => {
+          return (
+            <div key={project._id}>
+              <Link to={`/projects/${project._id}`}>
+                <h3>{project.name}</h3>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <AddProjectForm refreshProjects={fetchProjects} />
+      </div>
+      
     </div>
   );
 }

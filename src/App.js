@@ -12,6 +12,7 @@ import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage/ProjectDetailsPage'
 import EditProjectPage from './pages/EditProjectPage/EditProjectPage';
 import SprintPage from './pages/SprintPage/SprintPage';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
         <Route path="/sprint" element={<SprintPage />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
