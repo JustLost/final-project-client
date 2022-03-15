@@ -1,5 +1,8 @@
 
 
-.form-box{
+.add-project{
     background-attachment: white;
+    display: flex;
+    flex-direction: column;
 }
+

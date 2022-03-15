@@ -8,6 +8,7 @@ function EditProjectPage() {
   const [sprints, setSprints] = useState('');
   const [sprintDuration, setSprintDuration] = useState('');
   const [timestamps, setTimestamps] = useState('');
+  const [users, setUsers] = useState('');
 
   const { projectId } = useParams();
 
@@ -24,9 +25,13 @@ function EditProjectPage() {
   const fetchProject = async () => {
     try {
       let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`);
-      let { name, description, sprints, sprintDuration, timestamps } = response.data;
+      let { name, description, sprints, sprintDuration, timestamps, users } = response.data;
       setName(name);
       setDescription(description);
+      setSprints(sprints);
+      setSprintDuration(sprintDuration);
+      setTimestamps(timestamps);
+      setUsers(users);
     } catch (error) {
       console.log(error);
     }
@@ -39,13 +44,17 @@ function EditProjectPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const body = { name, description };
+    const body = { name, description, sprints, sprintDuration, timestamps, users };
 
     axios
       .put(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
         setName('');
         setDescription('');
+        setSprints([]);
+        setSprintDuration(0);
+        setTimestamps(true);
+        setUsers('');
         navigate(`/projects/${projectId}`);
       })
       .catch((err) => console.log(err));
@@ -58,6 +67,7 @@ function EditProjectPage() {
 
         <div>
           <label htmlFor="name">Name</label>
+          <br />
           <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         
@@ -68,20 +78,29 @@ function EditProjectPage() {
         
         <div>
           <label htmlFor="description">Description</label>
+          <br />
           <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
         
         <div>
           <label htmlFor="sprintDuration">Sprint Duration</label>
+          <br />
           <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
         </div>
         
         <div>
           <label htmlFor="timestamps">Created at</label>
+          <br />
           <input type="text" name="timestamps" value={timestamps} onChange={(e) => setTimestamps(e.target.value)} />
-        </div>      
+        </div>
+
+        <div>
+          <label htmlFor="users">Developers</label>
+          <br />
+          <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} />
+        </div>       
         
-        <button type="submit">Edit Project</button>
+        <button type="submit">Save</button>
       </form>
       <button onClick={deleteProject}> Delete Project</button>
     </div>

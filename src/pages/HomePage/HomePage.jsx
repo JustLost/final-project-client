@@ -68,26 +68,32 @@ function HomePage() {
         />
       </div>) : (<div>
         <form onSubmit={handleSubmit} >
-          <label htmlFor="summary">Summary</label>
-          <br />
-          <input type="text" id="summary" value={summary} onChange={e => setSummary(e.target.value)} />
-
-          <label htmlFor="description">Description</label>
-          <br />
-          <input type="textarea" id="description" value={description} onChange={e => setDescription(e.target.value)} />
-
-          <label htmlFor="location">Location</label>
-          <br />
-          <input type="text" id="summary" value={location} onChange={e => setLocation(e.target.value)} />
-
-          <label htmlFor="startDateTime">Start Date Time</label>
-          <br />
-          <input type="datetime-local" id="startDateTime" value={startDateTime} onChange={e => setStartDateTime(e.target.value)} />
-
-          <label htmlFor="endDateTime">End Date Time</label>
-          <br />
-          <input type="datetime-local" id="endDateTime" value={endDateTime} onChange={e => setEndDateTime(e.target.value)} />
-          <br />
+          <div>
+            <label htmlFor="summary">Summary</label>
+            <br />
+            <input type="text" id="summary" value={summary} onChange={e => setSummary(e.target.value)} />
+          </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <br />
+            <input type="textarea" id="description" value={description} onChange={e => setDescription(e.target.value)} />
+          </div>
+          <div> 
+            <label htmlFor="location">Location</label>
+            <br />
+            <input type="text" id="summary" value={location} onChange={e => setLocation(e.target.value)} />
+          </div>
+          <div>
+            <label htmlFor="startDateTime">Start Date Time</label>
+            <br />
+            <input type="datetime-local" id="startDateTime" value={startDateTime} onChange={e => setStartDateTime(e.target.value)} />
+          </div>
+          <div>
+            <label htmlFor="endDateTime">End Date Time</label>
+            <br />
+            <input type="datetime-local" id="endDateTime" value={endDateTime} onChange={e => setEndDateTime(e.target.value)} />
+          </div> 
+           
           <button type="submit">Create Event</button>
         </form>
       </div>)

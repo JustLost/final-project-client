@@ -23,17 +23,22 @@ function ProjectDetailsPage() {
 
   return (
     <div>
-      <h1>Project</h1>
+      <h1>Project detail</h1>
       {project && (
         <>
-          <h1>{project.name}</h1>
-          <h5>{project.description}</h5>
-          <p>{project.sprints}</p>
+          <h3>{project.name}</h3>
+          <h4>Description:</h4>
+          <p>{project.description}</p>          
+          {/* <p>{project.sprints}</p> */}
+          <h4>Sprint Duration:</h4>
           <p>{project.sprintDuration}</p>
-          <p>{project.timestamps}</p>
+          <h5>Created at: {project.createdAt}</h5>
+          <h5>Last update: {project.updatedAt}</h5>
+          <p>Users: {project.users}</p>
+          
         </>
       )}
-      {/* {project &&
+      {/* {project.tasks &&
         project.tasks.map((task) => (
           <li key={task._id}>
             <h3>{task.title}</h3>
@@ -44,6 +49,7 @@ function ProjectDetailsPage() {
 
       <div>
         {project && <button><Link to={`/projects/edit/${project._id}`}>Edit Project</Link></button>}
+        {project && <button><Link to={`/new/sprint/${project._id}`}>Add Sprint</Link></button>}
       </div>
       
       <Link to="/projects"> Back to Project List</Link>

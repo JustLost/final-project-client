@@ -44,19 +44,24 @@ function AddTaskForm(props) {
     <div>
       <h3>Add Task</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Task title</label>
-        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-
         <div>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="title">Task title</label>          
+          <br />
+          <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>          
+          <br />
           <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
         <div>
-          {/* <label htmlFor="creator">Creator</label>
-          <input type="time" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} /> */}
+          <label htmlFor="creator">Creator</label>
+          <br />
+          <input type="text" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} />
         </div>
         <div>
           <label htmlFor="assignTo">Assign To</label>
+          <br />
           <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
         </div>
         <div>

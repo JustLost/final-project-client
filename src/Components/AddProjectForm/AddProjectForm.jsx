@@ -27,15 +27,17 @@ function AddProjectForm(props) {
   return (
     <div className="add-project">
       <h3>Add Project</h3>
-      <div className="form-box">
+      <div>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Project Name</label>
+            <br />
             <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           
           <div>
             <label htmlFor="description">Description</label>
+            <br />
             <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
           </div>
           {/* <label htmlFor="sprints">Number of Sprints</label>
@@ -43,7 +45,8 @@ function AddProjectForm(props) {
 
           <div>
             <label htmlFor="sprintDuration">Sprint Duration</label>
-            <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
+            <br />
+            <input type="number" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
           </div>
 
           <div>

@@ -23,12 +23,12 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/new/project" element={<AddProjectForm />} />
-        <Route path="/new/sprint" element={<AddSprintForm />} />
+        <Route path="/new/sprint/:projectId" element={<AddSprintForm />} />
         <Route path="/new/task" element={<AddTaskForm />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
-        <Route path="/sprint" element={<SprintPage />} />
+        <Route path="/sprint/:projectId" element={<SprintPage />} />
       </Routes>
       <Footer/>
     </div>
