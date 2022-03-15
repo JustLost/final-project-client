@@ -49,11 +49,6 @@ function AddProjectForm(props) {
             <input type="number" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
           </div>
 
-          <div>
-            <button><a href="/new/task">Add a Task</a></button>
-            <button><a href="/">Add Team</a></button>
-          </div>
-
           <button type="submit">Add Project</button>
         </form>
       </div>

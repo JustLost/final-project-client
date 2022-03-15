@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function AddTaskForm(props) {
+  const { projectId } = useParams();
+  
+  const { user } = useContext(AuthContext);
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState("");
   const [description, setDescription] = useState("");
-  const [creator, setCreator] = useState("");
+  //const [creator, setCreator] = useState("");
   const [assignedTo, setAssinedTo] = useState("");
 
   //const navigate = useNavigate();
@@ -18,6 +22,7 @@ function AddTaskForm(props) {
   //const handleAssignedTo = (e) => setAssinedTo(e.target.value);
 
   const handleSubmit = (e) => {
+    const creator = user;
     e.preventDefault();
 
     const body = {
@@ -31,11 +36,11 @@ function AddTaskForm(props) {
     const storedToken = localStorage.getItem('authToken');
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/tasks`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
+      .post(`${process.env.REACT_APP_API_URL}/backlog/${projectId}`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
         setTitle("");
         //setSprints("");
-        props.refreshProjects();
+        //props.refreshTasks();
       })
       .catch((err) => console.log(err));
   };
@@ -54,11 +59,11 @@ function AddTaskForm(props) {
           <br />
           <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="creator">Creator</label>
           <br />
           <input type="text" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} />
-        </div>
+        </div> */}
         <div>
           <label htmlFor="assignTo">Assign To</label>
           <br />

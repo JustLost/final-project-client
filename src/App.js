@@ -30,7 +30,7 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
         <Route path="/sprint/:projectId" element={<SprintPage />} />
-        <Route path="/backlog" element={<BacklogPage />} />
+        <Route path="/backlog/:projectId" element={<BacklogPage />} />
       </Routes>
       <Footer/>
     </div>

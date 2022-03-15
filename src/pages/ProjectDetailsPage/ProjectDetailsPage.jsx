@@ -11,7 +11,8 @@ function ProjectDetailsPage() {
   
   const fetchProject = async () => {
     try {
-      let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
+      let response = await axios
+      .get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
       setProject(response.data);
     } catch (error) {
       console.log(error);
@@ -36,8 +37,7 @@ function ProjectDetailsPage() {
           <h5>Created at: {project.createdAt}</h5>
           <h5>Last update: {project.updatedAt}</h5>
           <p>Users: {project.users}</p>
-          <p>backp:{project.backlog}</p>
-          
+          {/* <p>backp:{project.backlog</p>           */}
         </>
       )}
       {/* {project.backlog &&
@@ -53,7 +53,8 @@ function ProjectDetailsPage() {
         {project && <button><Link to={`/projects/edit/${project._id}`}>Edit Project</Link></button>}
         {project && <button><Link to={`/new/sprint/${project._id}`}>Add Sprint</Link></button>}
       </div>
-      
+      {project && <button><Link to={`/backlog/${project._id}`}> Backlog</Link></button>}
+      <br />
       <Link to="/projects"> Back to Project List</Link>
     </div>
   );

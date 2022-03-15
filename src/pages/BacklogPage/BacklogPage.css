@@ -1,0 +1,6 @@
+.tasks-box {
+    background-color: green ;
+    display: flex;
+    justify-content: space-around;
+    
+}
