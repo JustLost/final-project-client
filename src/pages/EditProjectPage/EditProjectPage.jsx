@@ -23,18 +23,20 @@ function EditProjectPage() {
   };
 
   const fetchProject = async () => {
-    try {
-      let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`);
-      let { name, description, sprints, sprintDuration, timestamps, users } = response.data;
-      setName(name);
-      setDescription(description);
-      setSprints(sprints);
-      setSprintDuration(sprintDuration);
-      setTimestamps(timestamps);
-      setUsers(users);
-    } catch (error) {
-      console.log(error);
-    }
+      try {
+
+          let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
+          let { name, description, sprints, sprintDuration, timestamps, users } = response.data;
+          console.log(response.data)
+          setName(name);
+          setDescription(description);
+          setSprints(sprints);
+          setSprintDuration(sprintDuration);
+          setTimestamps(timestamps);
+          setUsers(users);
+      } catch (error) {
+          console.log(error);
+      }
   };
 
   useEffect(() => {

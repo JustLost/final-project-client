@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import "./ProjectDetailsPage.css"
 
 function ProjectDetailsPage() {
   
@@ -22,7 +23,7 @@ function ProjectDetailsPage() {
   }, []);
 
   return (
-    <div>
+    <div className='detail-box'>
       <h1>Project detail</h1>
       {project && (
         <>
@@ -35,11 +36,12 @@ function ProjectDetailsPage() {
           <h5>Created at: {project.createdAt}</h5>
           <h5>Last update: {project.updatedAt}</h5>
           <p>Users: {project.users}</p>
+          <p>backp:{project.backlog}</p>
           
         </>
       )}
-      {/* {project.tasks &&
-        project.tasks.map((task) => (
+      {/* {project.backlog &&
+        project.backlog.map((task) => (
           <li key={task._id}>
             <h3>{task.title}</h3>
             <h4>Description</h4>

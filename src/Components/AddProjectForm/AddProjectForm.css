@@ -3,6 +3,11 @@
 .add-project{
     background-attachment: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+    border-left: solid black 2px;
+    padding-left: 20px;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.116);
+    min-width: 30vw;
 }
 

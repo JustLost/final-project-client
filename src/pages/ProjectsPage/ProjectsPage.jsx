@@ -28,16 +28,18 @@ function ProjectsPage() {
   }, []);
 
   return (
-    <div className={"ProjectsPage "}>
+    <div className={"ProjectsPage"}>
       
       <div>
         <h1>Projects list</h1>      
         {projects.map((project) => {
           return (
-            <div key={project._id}>
+            <div className="projects-box" key={project._id}>
               <Link to={`/projects/${project._id}`}>
-                <h3>{project.name}</h3>
+                <h3>{project.name}</h3>                
               </Link>
+              <h4>{project.description}</h4>
+              <p>Users: {project.users}</p>
             </div>
           );
         })}

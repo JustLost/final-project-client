@@ -8,7 +8,6 @@ nav{
     display: flex;
     justify-content: space-between;
 	align-items: center;
-    margin-top: 1v;
 }
 
 .home{
@@ -20,5 +19,9 @@ nav{
     align-content: flex-end;
     margin-right: 2vw;
     justify-content: space-between;
+    padding: 10px;
+    
 }
-
+.nav a {
+    text-decoration: none;
+}

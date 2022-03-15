@@ -13,6 +13,7 @@ import ProjectDetailsPage from './pages/ProjectDetailsPage/ProjectDetailsPage'
 import EditProjectPage from './pages/EditProjectPage/EditProjectPage';
 import SprintPage from './pages/SprintPage/SprintPage';
 import Footer from './Components/Footer/Footer';
+import BacklogPage from './pages/BacklogPage/BacklogPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
         <Route path="/sprint/:projectId" element={<SprintPage />} />
+        <Route path="/backlog" element={<BacklogPage />} />
       </Routes>
       <Footer/>
     </div>

@@ -5,5 +5,12 @@
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
-    width: 80vw;
+    width: 100vw;
+}
+
+.projects-box{
+	min-height: 10vh;
+	border: 1px solid black;
+	margin: 1em;
+	padding: 1em;
 }

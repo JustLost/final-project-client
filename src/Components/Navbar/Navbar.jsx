@@ -9,14 +9,14 @@ function Navbar() {
       <nav>
         <div className="nav">
           <div className="home">
-            <Link to="/"> Homepage</Link>
+            <Link to="/"> Homepage </Link>
           </div>
 
           <div className="nav-left">
             {loggedIn && (
               
             <>
-              <Link to="/projects"> Projects</Link>
+              <Link className="links" to="/projects"> Projects </Link>
               {user.role}
               {user.username}
               {/* photo */}
@@ -26,14 +26,12 @@ function Navbar() {
           
             {!loggedIn && (
             <>
-              <Link to="/signup"> Signup</Link>
-              <Link to="/login"> Login</Link>
+              <Link to="/signup"> Signup </Link>
+              <Link to="/login"> Login </Link>
             </>
             )}
           </div>
-      </div>
-        
-        
+        </div>
       </nav>
     );
 }
