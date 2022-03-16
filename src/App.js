@@ -11,9 +11,9 @@ import AddTaskForm from './Components/AddTaskForm/AddTaskForm';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage/ProjectDetailsPage'
 import EditProjectPage from './pages/EditProjectPage/EditProjectPage';
-import SprintPage from './pages/SprintPage/SprintPage';
 import Footer from './Components/Footer/Footer';
 import BacklogPage from './pages/BacklogPage/BacklogPage';
+import SprintsPage from './pages/SprintsPage/SprintsPage';
 
 function App() {
   return (
@@ -29,8 +29,8 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
-        <Route path="/sprint/:projectId" element={<SprintPage />} />
         <Route path="/backlog/:projectId" element={<BacklogPage />} />
+        <Route path="/sprints" element={<SprintsPage />} />
       </Routes>
       <Footer/>
     </div>
