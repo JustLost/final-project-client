@@ -15,6 +15,7 @@ import Footer from './Components/Footer/Footer';
 import BacklogPage from './pages/BacklogPage/BacklogPage';
 import SprintsPage from './pages/SprintsPage/SprintsPage';
 import SprintDetailPage from './pages/SprintDetailPage/SprintDetailPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/backlog/:projectId" element={<BacklogPage />} />
         <Route path="/sprints" element={<SprintsPage />} />
         <Route path="/sprints/:sprintId" element={<SprintDetailPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
       <Footer/>
     </div>
