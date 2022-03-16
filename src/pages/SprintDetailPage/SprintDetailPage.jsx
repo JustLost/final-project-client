@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+
 function SprintDetailPage() {
 
     const [sprint, setSprint] = useState(null);
     const { sprintId } = useParams();
     const storedToken = localStorage.getItem('authToken');
+    const [showDetails, setShowDetails] = useState(true);
 
     const fetchSprint = async () => {
         try {
@@ -23,26 +25,36 @@ function SprintDetailPage() {
         fetchSprint();
     }, []);
 
+    const toggleShow = () => {
+        setShowDetails(!showDetails);
+    }
+
     return (
     <div>
-        <h1>Sprint Detail</h1>
-        {sprint && (
-            <>
-                <h3>{sprint.name}</h3>
-                <h4>{sprint.duration} weeks duration</h4>
-                <h4>Planning at:</h4>
-                <p>{sprint.startingDate}</p>
-                <h4>Review at:</h4>
-                <p>{sprint.review}</p>
-                <h4>Retrospective at:</h4>
-                <p>{sprint.retrospective}</p>
-                <h4>Standups at:</h4>
-                <p>{sprint.standUps}</p>
+        <div>
+           <h1>Sprint</h1>
+           <button onClick={toggleShow}>{showDetails ? 'Hide Sprint Details' : 'Show Sprint Details'}</button>
+            {sprint && showDetails && (
+                <>
+                    <h3>{sprint.name}</h3>
+                    <h4>{sprint.duration} weeks duration</h4>
+                    <h4>Planning at:</h4>
+                    <p>{sprint.startingDate}</p>
+                    <h4>Review at:</h4>
+                    <p>{sprint.review}</p>
+                    <h4>Retrospective at:</h4>
+                    <p>{sprint.retrospective}</p>
+                    <h4>Standups at:</h4>
+                    <p>{sprint.standUps}</p>
+                </>
+            )} 
+        </div>
+        <div>
 
-            </>
-        )}
+        </div>
     </div>
   )
+  //TODO: get tasks by status
 }
 
 export default SprintDetailPage
