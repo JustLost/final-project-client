@@ -31,10 +31,10 @@ function BacklogPage() {
         <h1>Backlog</h1>
         <div className='tasks-box'>
             <div>
-                <AddTaskForm/>
+                <AddTaskForm refresh={fetchTasks} />
             </div>
             <div>
-                <h3>Taks list</h3>
+                <h3>Tasks list:</h3>
                 {tasks && tasks.map((task) => {
                   return (
                     <div key={task._id}>

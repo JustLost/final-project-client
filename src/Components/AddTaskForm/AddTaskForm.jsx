@@ -40,7 +40,7 @@ function AddTaskForm(props) {
       .then((response) => {
         setTitle("");
         //setSprints("");
-        //props.refreshTasks();
+        props.refresh();
       })
       .catch((err) => console.log(err));
   };
