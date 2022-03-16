@@ -18,11 +18,21 @@ nav{
 .nav-left{
     align-content: flex-end;
     margin-right: 2vw;
-    justify-content: space-between;
-    padding: 10px;
-    
+    justify-content: space-between;    
 }
 .nav a {
     text-decoration: none;
     color: white;
+}
+
+.nav p {
+    padding: 0 20px;
+    color: white;
+}
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+    
 }

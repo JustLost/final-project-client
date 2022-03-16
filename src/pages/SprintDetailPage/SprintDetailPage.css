@@ -1,0 +1,17 @@
+.organized-tasks {
+    display: flex;
+
+}
+.task-status{
+    border: 2px solid black;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    margin: 20px;
+    margin-bottom: 10vh;
+}
+
+.task-status h2{
+    border-bottom: 1px black solid;
+    
+}

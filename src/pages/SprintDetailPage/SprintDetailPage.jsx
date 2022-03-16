@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import "./SprintDetailPage.css"
 
 
 function SprintDetailPage() {
@@ -49,8 +50,22 @@ function SprintDetailPage() {
                 </>
             )} 
         </div>
-        <div>
-
+        <div className='organized-tasks'>
+            <div className='task-status'>
+                <h2>To do</h2>
+            </div>
+            <div className='task-status'>
+                <h2>Doing</h2>
+            </div>
+            <div className='task-status'>
+                <h2>Blocked</h2>
+            </div>
+            <div className='task-status'>
+                <h2>Done</h2> 
+            </div>
+            <div className='task-status'>
+                <h2>Merge request</h2>
+            </div>
         </div>
     </div>
   )

@@ -15,13 +15,13 @@ function Navbar() {
           <div className="nav-left">
             {loggedIn && (
               
-            <>
+            <div className="nav-right">
               <Link className="links" to="/projects"> Projects </Link>
               {user.role}
-              {user.username}
+              <p>{user.username}</p>
               {/* photo */}
               <button onClick={logoutUser}>Logout</button>
-            </>
+            </div>
             )}
           
             {!loggedIn && (
