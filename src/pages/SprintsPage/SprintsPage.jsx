@@ -30,7 +30,7 @@ function SprintsPage() {
                     return (
                         <div key="task._id">
                             <Link to={`/sprints/${sprint._id}`}>
-                                <h3>{sprint.name}</h3>
+                                <h3>{sprint.name}</h3>                                
                             </Link>
 
                         </div>
