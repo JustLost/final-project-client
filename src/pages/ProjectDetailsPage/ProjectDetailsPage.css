@@ -1,5 +1,45 @@
 .detail-box {
-border: 2px solid black;
-width: 60vw;
-margin-left: 20vw;
+    border: 2px solid rgb(139, 1, 1);
+    width: 50vw;
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+    margin-top: 50px;
+    padding: 40px 0;
+    border-radius: 20px
+    
+;
+}
+
+.detail-box button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(139, 1, 1);
+    color: white;
+    border: none;
+    margin: 10px 20px;
+}
+.detail-box img{
+    max-height: 100px;
+    
+}
+
+.detail-box h4, h3, p, h5{
+    margin: 5px;
+}
+.detail-box h4{
+    border-bottom: 2px solid;
+    width: 400px;
+    padding-bottom: 20px;
+}
+.detail-boxs button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(139, 1, 1);
+    color: white;
+    border: none;
+    margin: 10px 20px;
 }

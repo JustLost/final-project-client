@@ -62,22 +62,30 @@ function SprintDetailPage() {
 
     return (
     <div style={{overflow:"auto"}}>
-        <div>
-           <h1>Sprint</h1>
+        <div className='main-sprint'>
+           <h1>{sprint && sprint.name} sprint: </h1>
            <button onClick={toggleShow}>{showDetails ? 'Hide Sprint Details' : 'Show Sprint Details'}</button>
             {sprint && showDetails && (
-                <>
-                    <h3>{sprint.name}</h3>
+                <div className='hidden'>
                     <h4>{sprint.duration} weeks duration</h4>
-                    <h4>Planning at:</h4>
-                    <p>{moment(sprint.startingDate).format('DD-MM-YYYY HH:MM')}</p>
-                    <h4>Review at:</h4>
-                    <p>{moment(sprint.review).format('DD-MM-YYYY HH:MM')}</p>
-                    <h4>Retrospective at:</h4>
-                    <p>{moment(sprint.retrospective).format('DD-MM-YYYY HH:MM')}</p>
-                    <h4>Standups at:</h4>
-                    <p>Everyday: {moment(sprint.standUps).format('HH:MM')}</p>
-                </>
+                    <div>
+                        <h4>Planning at:</h4>
+                        <p>{moment(sprint.startingDate).format('DD-MM-YYYY HH:MM')}</p>
+                    </div>
+                    <div>
+                        <h4>Review at:</h4>
+                        <p>{moment(sprint.review).format('DD-MM-YYYY HH:MM')}</p>
+                    </div>
+                    <div>
+                        <h4>Retrospective at:</h4>
+                        <p>{moment(sprint.retrospective).format('DD-MM-YYYY HH:MM')}</p>
+                    </div>
+                    <div>
+                        <h4>Standups at:</h4>
+                        <p>Everyday: {moment(sprint.standUps).format('HH:MM')}</p>
+                    </div>
+                    
+                </div>
             )} 
         </div>
         <div className={"row"}>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import AddSprintForm from '../../Components/AddSprintForm/AddSprintForm';
 import "./ProjectDetailsPage.css"
+import scrum from "../../images/scrum.png"
 
 const moment = require('moment');
 
@@ -32,16 +33,17 @@ function ProjectDetailsPage() {
   
 
   return (
+    <div> 
     <div className='detail-box'>
-      <h1>Project detail</h1>
+      <h1>{project && project.name} details:</h1>
       {project && (
         <>
-          <h3>{project.name}</h3>
-          <h4>Description:</h4>
-          <p>{project.description}</p>          
+          <p>Description:</p>
+          <h4>{project.description}</h4>          
           {/* <p>{project.sprints}</p> */}
-          <h4>Sprint Duration:</h4>
-          <p>{project.sprintDuration} weeks</p>
+          <img src={scrum} alt="scrum" />
+          <h3>Sprint Duration:</h3>
+          <h4>{project.sprintDuration} weeks</h4>
           <h5>Created: {moment(project.createdAt).format('DD-MM-YYYY HH:MM A')}</h5>
           <h5>Last update: {moment(project.updatedAt).format('DD-MM-YYYY HH:MM A')}</h5>
           <p>Users: {project.users[0].username}</p>
@@ -65,10 +67,13 @@ function ProjectDetailsPage() {
         <AddSprintForm onClose={() => setShow(false)} show={show}/>
                
       </div>
-      {project && <Link to={"/sprints"}><button>Sprints</button></Link>}
-      {project && <Link to={`/backlog/${project._id}`}><button> Backlog </button></Link>}
       <br />
       <Link to="/projects"> Back to Project List</Link>
+      <br />
+      {project && <Link to={"/sprints"}><button className='btn-border'>Sprints</button></Link>}
+      {project && <Link to={`/backlog/${project._id}`}><button className='btn-border'> Backlog </button></Link>}
+          
+    </div>
     </div>
   );
 }

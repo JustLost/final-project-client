@@ -18,11 +18,8 @@
 
 /* !tutorial */
 :root {
-    --primary-color: rgb(62, 100, 255);
-    --complete-color: #27aa80;
-    --text-color: #172b4d;
     --disabled-color: #fad6d6;
-    --background-color: #f5eaea;
+    --background-color: #660404;
 }
 
 a {
@@ -30,20 +27,25 @@ a {
     cursor: pointer;
 }
 
-p {
-    margin: 10px 0;
+.row p {
+    margin: 5px 0;
     overflow-wrap: break-word;
     text-align: left;
     padding-left: 20px;
+    font-weight: bold;
 }
-
-button, input {
+.row h2 {
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid  ;
+}
+.row button, input {
     padding: 4px;
     border: 1px solid var(--disabled-color);
     border-radius: 10px;
 }
 
-button {
+.row button {
     outline: none;
     background: transparent;
     border-radius: 5px;
@@ -53,18 +55,6 @@ button {
     padding: 10px 10px;
 }
 
-button.active {
-    color: var(--primary-color);
-}
-
-button.active:after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    padding-top: 4px;
-    border-bottom: 1px solid var(--primary-color);
-}
 
 input:focus {
     outline: none;
@@ -79,6 +69,7 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 20px;
 }
 
 .item {
@@ -87,11 +78,14 @@ select {
     padding: 5px;
     border-radius: 10px;
     z-index: 1;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .item:hover {
     cursor: pointer;
+    background-color: #660404;
+    color: white;
+    border: 2px white solid;
 }
 
 .item-title {
@@ -121,7 +115,8 @@ select {
     margin: 20px;
     padding: 20px;
     background-color: var(--background-color);
-    border-radius: 5px;
+    border-radius: 10px;
+    
 }
 
 .col-header {
@@ -132,13 +127,14 @@ select {
 }
 
 .col {
-    min-height: 300px;
+    min-height: 400px;
     max-width: 300px;
     width: 300px;
+    border-radius: 10px;
 }
 
 .highlight-region {
-    background-color: rgba(206, 206, 206, 0.534);
+    background-color: rgba(252, 216, 216, 0.534);
 }
 
 .modal {
@@ -177,4 +173,32 @@ select {
 
 .close-btn:hover {
     background-color: #DCDCDC;
+}
+
+.main-sprint button{
+    border: #660404 solid 2px;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: #660404;
+
+}
+.main-sprint button:hover {
+    background-color: #660404;
+    color: white;
+}
+
+.hidden{
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+    margin: 0 15vw;
+}
+.hidden p{
+    border-top: 1px solid black ;
+    padding-top: 5px;
+}
+.hidden h4{
+    margin-bottom: -10px;
 }

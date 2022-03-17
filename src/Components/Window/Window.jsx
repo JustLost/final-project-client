@@ -1,12 +1,10 @@
 import React from 'react'
 import Modal from "react-modal";
 
-//TODO: class in the correspondening page
-
 function Window({show, onClose, item}) {
     
     // document.getElementById("root") && Modal.setAppElement("#root");
-    console.log("iteeem:", item)
+    //console.log("iteeem:", item)
   return (    
     <Modal
         ariaHideApp={false}

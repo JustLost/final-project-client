@@ -1,13 +1,33 @@
 
 
 .add-project{
-    background-attachment: white;
     display: flex;
     flex-direction: column;    
-    border-left: solid black 2px;
-    padding-left: 20px;
-    height: 70vh;
-    background-color: rgba(0, 0, 0, 0.116);
+    justify-content: center;
+    border-left: solid rgb(161, 4, 4) 4px;
+    margin: 100px;
+    min-height: 60vh;
+    background-color:rgb(255, 220, 220);
     min-width: 30vw;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
+.add-project input{
+    border:2px rgb(182, 2, 2) solid;
+    margin: 5px;
 
+}
+.add-project button{
+    border-radius: 10px;
+    border: transparent;
+    margin-top: 20px;
+    background-color: rgb(161, 4, 4);
+    color: white;
+    height: 35px;
+    width: 100px;
+}
+.add-project button:hover{
+    border: 2px rgb(161, 4, 4) solid;
+    background-color: white;
+    color: rgb(161, 4, 4);
+}

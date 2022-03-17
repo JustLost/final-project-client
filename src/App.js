@@ -16,6 +16,7 @@ import BacklogPage from './pages/BacklogPage/BacklogPage';
 import SprintsPage from './pages/SprintsPage/SprintsPage';
 import SprintDetailPage from './pages/SprintDetailPage/SprintDetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+// import SideBar from './Components/SideBar/SideBar';
 
 
 //TODO: 
@@ -24,6 +25,7 @@ function App() {
   return (
     <div id="app" className="App">
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignupPage />} />
@@ -41,6 +43,8 @@ function App() {
 
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+      
+      {/* <SideBar/> */}
       <Footer/>
     </div>
   );
