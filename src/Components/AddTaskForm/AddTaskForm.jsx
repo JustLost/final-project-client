@@ -12,7 +12,8 @@ function AddTaskForm(props) {
   const [description, setDescription] = useState("");
   //const [creator, setCreator] = useState("");
   const [assignedTo, setAssinedTo] = useState("");
-  
+  const [tag, setTag] = useState("");
+  const [storyPoints, setStoryPoints] = useState("")
   //const navigate = useNavigate();
 
   //const handleTitle = (e) => setTitle(e.target.value);
@@ -31,6 +32,8 @@ function AddTaskForm(props) {
       description,
       creator,
       assignedTo,
+      tag,
+      storyPoints
     };
 
     const storedToken = localStorage.getItem('authToken');
@@ -70,6 +73,7 @@ function AddTaskForm(props) {
           <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
         </div>
         <div>
+            <h4>Task Status</h4>
             <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
             <label htmlFor="role">To do</label>
 
@@ -84,6 +88,37 @@ function AddTaskForm(props) {
 
             <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
             <label htmlFor="role">Done</label>
+        </div>
+        <div>
+            <h4>Task Tag</h4>
+            <input type="radio" name="myTagBox" value="none" onChange={handleStatus}  defaultChecked />
+            <label htmlFor="tag">none</label>
+
+            <input type="radio" name="myTagBox" value="User Story" onChange={handleStatus} />
+            <label htmlFor="tag">User Story</label>
+
+            <input type="radio" name="myTagBox" value="Spike" onChange={handleStatus} />
+            <label htmlFor="tag">Spike</label>
+
+            <input type="radio" name="myTagBox" value="Bug Fix" onChange={handleStatus} />
+            <label htmlFor="tag">Bug Fix</label>
+        </div>
+        <div>
+            <h4>Story Points</h4>
+            <input type="radio" name="myPointsBox" value="1" onChange={handleStatus} />
+            <label htmlFor="role">1</label>
+
+            <input type="radio" name="myPointsBox" value="2" onChange={handleStatus} />
+            <label htmlFor="role">2</label>
+
+            <input type="radio" name="myPointsBox" value="3" onChange={handleStatus} />
+            <label htmlFor="role">3</label>
+
+            <input type="radio" name="myPointsBox" value="5" onChange={handleStatus} />
+            <label htmlFor="role">5</label>
+
+            <input type="radio" name="myPointsBox" value="8" onChange={handleStatus} />
+            <label htmlFor="role">8</label>
         </div>
         <button type="submit">Add task</button>
       </form>

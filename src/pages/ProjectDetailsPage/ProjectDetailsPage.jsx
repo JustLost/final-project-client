@@ -29,7 +29,7 @@ function ProjectDetailsPage() {
     fetchProject();
   }, []);
 
-  //TODO: map users bellow
+  
 
   return (
     <div className='detail-box'>
@@ -42,9 +42,10 @@ function ProjectDetailsPage() {
           {/* <p>{project.sprints}</p> */}
           <h4>Sprint Duration:</h4>
           <p>{project.sprintDuration} weeks</p>
-          <h5>Created: {moment(project.createdAt).format('YYYY-MM-DD HH:MM')}</h5>
-          <h5>Last update: {moment(project.updatedAt).format('YYYY-MM-DD HH:MM')}</h5>
+          <h5>Created: {moment(project.createdAt).format('DD-MM-YYYY HH:MM A')}</h5>
+          <h5>Last update: {moment(project.updatedAt).format('DD-MM-YYYY HH:MM A')}</h5>
           <p>Users: {project.users[0].username}</p>
+          {/* //TODO: map users bellow */}
           {/* <p>backp:{project.backlog</p>           */}
         </>
       )}

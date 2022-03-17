@@ -6,15 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 //import { ThemeProviderWrapper } from "./context/theme.context";
 import { AuthProviderWrapper } from "./context/auth.context";
+import {HTML5Backend} from "react-dnd-html5-backend"
+import {DndProvider} from "react-dnd"
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProviderWrapper>
+      <DndProvider backend={HTML5Backend}>
       {/* <ThemeProviderWrapper> */}
         <Router>
             <App />
         </Router>
       {/* </ThemeProviderWrapper> */}
+      </DndProvider>
     </AuthProviderWrapper>
   </React.StrictMode>,
   document.getElementById("root")

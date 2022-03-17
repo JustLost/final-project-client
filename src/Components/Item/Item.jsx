@@ -3,10 +3,14 @@ import { useDrag, useDrop } from "react-dnd";
 import Window from "../Window/Window";
 
 
-function Item( item, index, moveItem, status ) {
+function Item( {item, index, moveItem, status} ) {
     const ref = useRef(null);
 
-    const [, drop] = useDrop({
+    const [{canDrop}, drop] = useDrop({
+        accept: "CARD",
+        collect: monitor => ({
+            canDrop: monitor.canDrop()
+        }),
         hover(item, monitor) {
             if (!ref.current) {
                 return
@@ -33,10 +37,12 @@ function Item( item, index, moveItem, status ) {
             moveItem(dragIndex, hoverIndex);
             item.index = hoverIndex;
         },
+        
     });
 
     const [{ isDragging }, drag] = useDrag({
-        item: { ...item, index },
+        type: "CARD",
+        item: {...item, index },
         collect: monitor => ({
             isDragging: monitor.isDragging()
         })
@@ -49,7 +55,7 @@ function Item( item, index, moveItem, status ) {
     const onClose = () => setShow(false);
 
     drag(drop(ref));
-
+    //console.log("iteeeeeeeeeeeem:", item)
     return (
         <>
             <div
@@ -58,9 +64,8 @@ function Item( item, index, moveItem, status ) {
                 className={"item"}
                 onClick={onOpen}
             >
-                <div className={"color-bar"} style={{ backgroundColor: status.color }}/>
-                <p className={"item-title"}>{item.content}</p>
-                <p className={"item-status"}>{item.icon}</p>
+                <div  />
+                <p>{item.title}</p>
             </div>
             <Window
                 item={item}

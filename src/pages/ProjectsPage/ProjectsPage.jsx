@@ -19,6 +19,7 @@ function ProjectsPage() {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       setProjects(response.data);
+      //console.log("responseeeeee:", response.data[0].users[0])
     } catch (error) {
       console.log(error);
     }

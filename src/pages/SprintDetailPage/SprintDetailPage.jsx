@@ -9,7 +9,7 @@ import Col from '../../Components/Col/Col';
 
 const moment = require('moment');
 
-const statuses = [ "To do", "Doing", "Merge Request", "Done", "Blocked" ]
+const statuses = [ "To do", "Doing", "Merge Request", "Done", "Blocked" ];
 const data = null;
 
 function SprintDetailPage() {
@@ -46,7 +46,7 @@ function SprintDetailPage() {
         setItems(prevState => {
             const newItems = prevState
                 .filter(i => i.id !== item.id)
-                .concat({ ...item, status, icon: mapping.icon });
+                .concat({ ...item, status});
             return [ ...newItems ];
         });
     };
@@ -70,25 +70,25 @@ function SprintDetailPage() {
                     <h3>{sprint.name}</h3>
                     <h4>{sprint.duration} weeks duration</h4>
                     <h4>Planning at:</h4>
-                    <p>{moment(sprint.startingDate).format('YYYY-MM-DD HH:MM')}</p>
+                    <p>{moment(sprint.startingDate).format('DD-MM-YYYY HH:MM')}</p>
                     <h4>Review at:</h4>
-                    <p>{moment(sprint.review).format('YYYY-MM-DD HH:MM')}</p>
+                    <p>{moment(sprint.review).format('DD-MM-YYYY HH:MM')}</p>
                     <h4>Retrospective at:</h4>
-                    <p>{moment(sprint.retrospective).format('YYYY-MM-DD HH:MM')}</p>
+                    <p>{moment(sprint.retrospective).format('DD-MM-YYYY HH:MM')}</p>
                     <h4>Standups at:</h4>
                     <p>Everyday: {moment(sprint.standUps).format('HH:MM')}</p>
                 </>
             )} 
         </div>
         <div className={"row"}>
-            {statuses.map(s => {
-                return (
-                    // eslint-disable-next-line no-restricted-globals
-                    <div key={status} className={"col-wrapper"}>
+            {statuses.map((s, index) => {
+                return (                    
+                    <div key={index} className={"col-wrapper"}>
                         <h2 className={"col-header"}>{s.toUpperCase()}</h2>
+
                         <DropWrapper onDrop={onDrop} status={s}>
                             <Col>
-                                {items
+                                {items && items
                                     .filter(i => i.status === s)
                                     .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={s} />)
                                 }

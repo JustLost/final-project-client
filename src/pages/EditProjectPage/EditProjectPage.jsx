@@ -24,16 +24,15 @@ function EditProjectPage() {
 
   const fetchProject = async () => {
       try {
-
           let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
-          let { name, description, sprints, sprintDuration, timestamps, users } = response.data;
+          let { name, description, sprints, sprintDuration, timestamps } = response.data;
           console.log(response.data)
           setName(name);
           setDescription(description);
           setSprints(sprints);
           setSprintDuration(sprintDuration);
           setTimestamps(timestamps);
-          setUsers(users[0].email);
+          
       } catch (error) {
           console.log(error);
       }
@@ -63,6 +62,7 @@ function EditProjectPage() {
   };
 
   return (
+    
     <div>
       <h3>Edit Project </h3>
       <form onSubmit={handleSubmit}>
@@ -99,6 +99,8 @@ function EditProjectPage() {
         <div>
           <label htmlFor="users">Add Developers</label>
           <br />
+          {/* //TODO: select */}
+          <select name="" id=""></select>          
           <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} />
         </div>       
         
@@ -109,4 +111,4 @@ function EditProjectPage() {
   );
 }
 
-export default EditProjectPage
+export default EditProjectPage;
