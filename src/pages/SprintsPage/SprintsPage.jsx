@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import AddSprintForm from '../../Components/AddSprintForm/AddSprintForm';
 
 function SprintsPage() {
     const [sprints, setSprints] = useState([]);
@@ -32,10 +33,12 @@ function SprintsPage() {
                             <Link to={`/sprints/${sprint._id}`}>
                                 <h3>{sprint.name}</h3>                                
                             </Link>
-
                         </div>
                     )
                 })}
+            </div>
+            <div>
+                <AddSprintForm refreshSprints={fetchSprints}/>
             </div>
         </div>
     )

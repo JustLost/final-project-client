@@ -14,7 +14,8 @@ function ProjectsPage() {
     try {
       const storedToken = localStorage.getItem('authToken');
 
-      let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects`, {
+      let response = await 
+        axios.get(`${process.env.REACT_APP_API_URL}/projects`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
       setProjects(response.data);

@@ -33,7 +33,7 @@ function EditProjectPage() {
           setSprints(sprints);
           setSprintDuration(sprintDuration);
           setTimestamps(timestamps);
-          setUsers(users);
+          setUsers(users[0].email);
       } catch (error) {
           console.log(error);
       }
@@ -90,14 +90,14 @@ function EditProjectPage() {
           <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
         </div>
         
-        <div>
+        {/* <div>
           <label htmlFor="timestamps">Created at</label>
           <br />
           <input type="text" name="timestamps" value={timestamps} onChange={(e) => setTimestamps(e.target.value)} />
-        </div>
+        </div> */}
 
         <div>
-          <label htmlFor="users">Developers</label>
+          <label htmlFor="users">Add Developers</label>
           <br />
           <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} />
         </div>       

@@ -12,7 +12,7 @@ function ProfilePage() {
             let response = await axios.get(`${process.env.REACT_APP_API_URL}/user`, {
                 headers: { Authorization: `Bearer ${storedToken}` },
             });
-            console.log(response.data);
+            console.log("dataaaaaaaa:", response.data);
             setUser(response.data);
         } catch (error) {
             console.log(error)
