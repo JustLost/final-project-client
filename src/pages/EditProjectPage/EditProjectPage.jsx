@@ -8,7 +8,9 @@ function EditProjectPage() {
   const [sprints, setSprints] = useState('');
   const [sprintDuration, setSprintDuration] = useState('');
   const [timestamps, setTimestamps] = useState('');
-  const [users, setUsers] = useState('');
+  const [users, setUsers] = useState([]);
+  // const [username, setUsername] = useState;
+  const [email, setEmail] = useState('');
 
   const { projectId } = useParams();
 
@@ -37,16 +39,28 @@ function EditProjectPage() {
           console.log(error);
       }
   };
+//TODO fetch user slect map
+  const fetchUsers = async () => {
+    try {
+        let response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {headers: { Authorization: `Bearer ${storedToken}` }});
+        console.log("userssss:", response.data)
+        setUsers(response.data)
+    } catch (error) {
+        console.log(error);
+    }
+};
 
   useEffect(() => {
     fetchProject();
+    fetchUsers();
+
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const body = { name, description, sprints, sprintDuration, timestamps, users };
-
+    const body = { name, description, sprints, sprintDuration, timestamps, users, email };
+    console.log(email)
     axios
       .put(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
@@ -56,6 +70,7 @@ function EditProjectPage() {
         setSprintDuration(0);
         setTimestamps(true);
         setUsers('');
+        setEmail(null)
         navigate(`/projects/${projectId}`);
       })
       .catch((err) => console.log(err));
@@ -97,11 +112,20 @@ function EditProjectPage() {
         </div> */}
 
         <div>
-          <label htmlFor="users">Add Developers</label>
+          <label htmlFor="username">Add Developers</label>
           <br />
           {/* //TODO: select */}
-          <select name="" id=""></select>          
-          <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} />
+          <select name="email" onChange={(e) => setEmail(e.target.value)}>
+          {users && users.map((user) => {
+            console.log("hi", user.username)
+            return (             
+             <option value={user.email}>{user.username}</option>
+             
+            )
+          })}
+          </select>
+                    
+          {/* <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} /> */}
         </div>       
         
         <button type="submit">Save</button>

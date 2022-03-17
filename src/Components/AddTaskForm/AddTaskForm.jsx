@@ -12,8 +12,8 @@ function AddTaskForm(props) {
   const [description, setDescription] = useState("");
   //const [creator, setCreator] = useState("");
   const [assignedTo, setAssinedTo] = useState("");
-  const [tag, setTag] = useState("");
-  const [storyPoints, setStoryPoints] = useState("")
+  const [tag, setTag] = useState("none");
+  const [storyPoints, setStoryPoints] = useState(1)
   //const navigate = useNavigate();
 
   //const handleTitle = (e) => setTitle(e.target.value);
@@ -42,6 +42,7 @@ function AddTaskForm(props) {
       .post(`${process.env.REACT_APP_API_URL}/backlog/${projectId}`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
       .then((response) => {
         setTitle("");
+        //TODO: outros
         //setSprints("");
         props.refresh();
       })
@@ -91,34 +92,34 @@ function AddTaskForm(props) {
         </div>
         <div>
             <h4>Task Tag</h4>
-            <input type="radio" name="myTagBox" value="none" onChange={handleStatus}  defaultChecked />
+            <input type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)}  defaultChecked />
             <label htmlFor="tag">none</label>
 
-            <input type="radio" name="myTagBox" value="User Story" onChange={handleStatus} />
+            <input type="radio" name="myTagBox" value="User Story" onChange={(e) => setTag(e.target.value)} />
             <label htmlFor="tag">User Story</label>
 
-            <input type="radio" name="myTagBox" value="Spike" onChange={handleStatus} />
+            <input type="radio" name="myTagBox" value="Spike" onChange={(e) => setTag(e.target.value)} />
             <label htmlFor="tag">Spike</label>
 
-            <input type="radio" name="myTagBox" value="Bug Fix" onChange={handleStatus} />
+            <input type="radio" name="myTagBox" value="Bug Fix" onChange={(e) => setTag(e.target.value)} />
             <label htmlFor="tag">Bug Fix</label>
         </div>
         <div>
             <h4>Story Points</h4>
-            <input type="radio" name="myPointsBox" value="1" onChange={handleStatus} />
-            <label htmlFor="role">1</label>
+            <input type="radio" name="myPointsBox" value="1" onChange={(e) => setStoryPoints(e.target.value)} />
+            <label htmlFor="storyPoints">1</label>
 
-            <input type="radio" name="myPointsBox" value="2" onChange={handleStatus} />
-            <label htmlFor="role">2</label>
+            <input type="radio" name="myPointsBox" value="2" onChange={(e) => setStoryPoints(e.target.value)} />
+            <label htmlFor="storyPoints">2</label>
 
-            <input type="radio" name="myPointsBox" value="3" onChange={handleStatus} />
-            <label htmlFor="role">3</label>
+            <input type="radio" name="myPointsBox" value="3" onChange={(e) => setStoryPoints(e.target.value)} />
+            <label htmlFor="storyPoints">3</label>
 
-            <input type="radio" name="myPointsBox" value="5" onChange={handleStatus} />
-            <label htmlFor="role">5</label>
+            <input type="radio" name="myPointsBox" value="5" onChange={(e) => setStoryPoints(e.target.value)} />
+            <label htmlFor="storyPoints">5</label>
 
-            <input type="radio" name="myPointsBox" value="8" onChange={handleStatus} />
-            <label htmlFor="role">8</label>
+            <input type="radio" name="myPointsBox" value="8" onChange={(e) => setStoryPoints(e.target.value)} />
+            <label htmlFor="storyPoints">8</label>
         </div>
         <button type="submit">Add task</button>
       </form>

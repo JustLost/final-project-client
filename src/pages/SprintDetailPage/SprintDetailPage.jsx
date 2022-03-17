@@ -61,7 +61,7 @@ function SprintDetailPage() {
     };
 
     return (
-    <div>
+    <div style={{overflow:"auto"}}>
         <div>
            <h1>Sprint</h1>
            <button onClick={toggleShow}>{showDetails ? 'Hide Sprint Details' : 'Show Sprint Details'}</button>
