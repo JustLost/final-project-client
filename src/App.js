@@ -18,9 +18,11 @@ import SprintDetailPage from './pages/SprintDetailPage/SprintDetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 
+//TODO: 
+
 function App() {
   return (
-    <div className="App">
+    <div id="app" className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -34,7 +36,9 @@ function App() {
         <Route path="/projects/edit/:projectId" element={<EditProjectPage />} /> 
         <Route path="/backlog/:projectId" element={<BacklogPage />} />
         <Route path="/sprints" element={<SprintsPage />} />
-        <Route path="/sprints/:sprintId" element={<SprintDetailPage />} />
+
+        <Route path="/sprints/:sprintId" element={<SprintDetailPage />} />             
+
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
       <Footer/>

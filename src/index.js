@@ -12,7 +12,7 @@ ReactDOM.render(
     <AuthProviderWrapper>
       {/* <ThemeProviderWrapper> */}
         <Router>
-          <App />
+            <App />
         </Router>
       {/* </ThemeProviderWrapper> */}
     </AuthProviderWrapper>

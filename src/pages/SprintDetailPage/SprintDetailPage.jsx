@@ -3,14 +3,22 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./SprintDetailPage.css"
 
+import Item from "../../Components/Item/Item";
+import DropWrapper from "../../Components/DropWrapper/DropWrapper";
+import Col from '../../Components/Col/Col';
+
 const moment = require('moment');
 
-function SprintDetailPage() {
+const statuses = [ "To do", "Doing", "Merge Request", "Done", "Blocked" ]
+const data = null;
 
+function SprintDetailPage() {
     const [sprint, setSprint] = useState(null);
     const { sprintId } = useParams();
     const storedToken = localStorage.getItem('authToken');
-    const [showDetails, setShowDetails] = useState(false);    
+    const [showDetails, setShowDetails] = useState(false); 
+
+    const [items, setItems] = useState(data);
 
     const fetchSprint = async () => {
         try {
@@ -18,6 +26,7 @@ function SprintDetailPage() {
             .get(`${process.env.REACT_APP_API_URL}/sprints/${sprintId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
             console.log("respnseeee:", response.data)
             setSprint(response.data);
+            setItems(response.data.tasks);
         } catch (error) {
             console.log(error)
         }
@@ -30,6 +39,26 @@ function SprintDetailPage() {
     const toggleShow = () => {
         setShowDetails(!showDetails);
     }
+
+    const onDrop = (item, monitor, status) => {
+        const mapping = statuses.find(si => si.status === status);
+
+        setItems(prevState => {
+            const newItems = prevState
+                .filter(i => i.id !== item.id)
+                .concat({ ...item, status, icon: mapping.icon });
+            return [ ...newItems ];
+        });
+    };
+
+    const moveItem = (dragIndex, hoverIndex) => {
+        const item = items[dragIndex];
+        setItems(prevState => {
+            const newItems = prevState.filter((i, idx) => idx !== dragIndex);
+            newItems.splice(hoverIndex, 0, item);
+            return  [ ...newItems ];
+        });
+    };
 
     return (
     <div>
@@ -51,31 +80,26 @@ function SprintDetailPage() {
                 </>
             )} 
         </div>
-        <div className='organized-tasks'>
-            <div className='task-status'>
-                <h2>tasks</h2>
-                {/* //TODO: map a mostrar lista de tasks */}
-                <p>{sprint.tasks[0].title}</p>
-            </div>
-            <div className='task-status'>
-                <h2>To do</h2>
-            </div>
-            <div className='task-status'>
-                <h2>Doing</h2>
-            </div>
-            <div className='task-status'>
-                <h2>Blocked</h2>
-            </div>
-            <div className='task-status'>
-                <h2>Done</h2> 
-            </div>
-            <div className='task-status'>
-                <h2>Merge request</h2>
-            </div>
+        <div className={"row"}>
+            {statuses.map(s => {
+                return (
+                    // eslint-disable-next-line no-restricted-globals
+                    <div key={status} className={"col-wrapper"}>
+                        <h2 className={"col-header"}>{s.toUpperCase()}</h2>
+                        <DropWrapper onDrop={onDrop} status={s}>
+                            <Col>
+                                {items
+                                    .filter(i => i.status === s)
+                                    .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={s} />)
+                                }
+                            </Col>
+                        </DropWrapper>
+                    </div>
+                );
+            })}
         </div>
     </div>
   )
-  //TODO: get tasks by status
 }
 
 export default SprintDetailPage
