@@ -9,11 +9,19 @@
 	align-items: center;
     margin-top: 50px;
     padding: 40px 0;
-    border-radius: 20px
-    
-;
+    border-radius: 20px;
+    background-color: white;
 }
-
+.a{
+    color: black;
+    font-weight: 700;
+    border-bottom: 2px solid black;
+    padding-bottom: 2px;
+}
+.a:hover{
+    border: none;
+    color: rgb(139, 1, 1);
+}
 .detail-box button{
     padding: 10px 20px;
     border-radius: 5px;
@@ -21,6 +29,11 @@
     color: white;
     border: none;
     margin: 10px 20px;
+}
+.detail-box button:hover{
+    color: rgb(139, 1, 1);
+    border: rgb(139, 1, 1) 2px solid;
+    background-color: white;
 }
 .detail-box img{
     max-height: 100px;

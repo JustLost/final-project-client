@@ -15,7 +15,7 @@ nav{
     margin-left: 2vw;
 }
 .home img{
-    max-height: 30px;
+    max-height: 40px;
 }
 
 .nav-left{
@@ -26,8 +26,12 @@ nav{
 .nav a {
     text-decoration: none;
     color: white;
+    padding-left: 40px;
 }
-
+.nav a:hover{
+    border-bottom: 2px solid white;
+    
+}
 
 .nav p {
     padding: 0 20px;
@@ -63,3 +67,4 @@ nav{
     border: 2px solid white;
     border-radius:5px ;
 }
+

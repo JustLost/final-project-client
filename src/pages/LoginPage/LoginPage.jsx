@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/auth.context";
+import "./LoginPage.css"
 
 
 function LoginPage() {
@@ -31,9 +32,10 @@ function LoginPage() {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="log-box">
+      <div className="box-log">
+        <h1>Login</h1>
+          <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username</label>
           <input type="text" name="username" value={username} onChange={handleUsername} />
@@ -46,6 +48,8 @@ function LoginPage() {
 
         <p>You don't have an account yet? <a href="/signup">Create one here.</a></p>
       </form>
+      </div>
+      
     </div>
   );
 }

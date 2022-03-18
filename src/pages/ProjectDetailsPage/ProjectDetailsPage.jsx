@@ -68,7 +68,7 @@ function ProjectDetailsPage() {
                
       </div>
       <br />
-      <Link to="/projects"> Back to Project List</Link>
+      <Link className='a' to="/projects"> Back to Project List</Link>
       <br />
       {project && <Link to={"/sprints"}><button className='btn-border'>Sprints</button></Link>}
       {project && <Link to={`/backlog/${project._id}`}><button className='btn-border'> Backlog </button></Link>}
