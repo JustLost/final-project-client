@@ -40,7 +40,7 @@ function AddSprintForm(props) {
     const { code } = response
     const storedToken = localStorage.getItem('authToken');
     axios
-      .post("/create-tokens", { code }, {headers: { Authorization: `Bearer ${storedToken}` },
+      .post(`${process.env.REACT_APP_API_URL}/create-tokens`, { code }, {headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(response => {
         console.log(response.data)
@@ -68,7 +68,7 @@ function AddSprintForm(props) {
     moment(endDateTime).add(1, 'hours');
     let recurring = 0;
     axios
-      .post("/create-event", {
+      .post(`${process.env.REACT_APP_API_URL}/create-event`, {
         summary,
         description,
         location,
