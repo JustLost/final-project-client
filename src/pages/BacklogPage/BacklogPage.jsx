@@ -27,17 +27,17 @@ function BacklogPage() {
     }, []);
 
   return (
-    <div>
+    <div className='backlog'>
         <h1>Backlog</h1>
         <div className='tasks-box'>
             <div>
                 <AddTaskForm refresh={fetchTasks} />
             </div>
             <div>
-                <h3>Tasks list:</h3>
+                <h2>Tasks list:</h2>
                 {tasks && tasks.map((task) => {
                   return (
-                    <div key={task._id}>
+                    <div className='sprints' key={task._id}>
                         <Link to={`/tasks/${task._id}`}>
                             <h3>{task.title}</h3>
                         </Link>
@@ -47,9 +47,6 @@ function BacklogPage() {
             </div>
         </div>        
         
-        <div>        
-            {user.username}
-        </div>
     </div>
   )
 }

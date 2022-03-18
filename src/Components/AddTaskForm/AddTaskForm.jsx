@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import "./AddTaskForm.css"
 
 function AddTaskForm(props) {
   const { projectId } = useParams();
@@ -50,7 +51,7 @@ function AddTaskForm(props) {
   };
 
   return (
-    <div>
+    <div className="task-box">
       <h3>Add Task</h3>
       <form onSubmit={handleSubmit}>
         <div>
