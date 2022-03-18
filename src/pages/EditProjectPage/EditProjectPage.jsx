@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import "./EditProjectPage.css"
 
 function EditProjectPage() {
   const [name, setName] = useState('');
@@ -78,59 +79,64 @@ function EditProjectPage() {
 
   return (
     
-    <div>
-      <h3>Edit Project </h3>
+    <div className='edit-project'>
+      <h1>Edit Project </h1>
       <form onSubmit={handleSubmit}>
+        <div className='proj-inputs'>
+            <div >
+              <label htmlFor="name">Name:</label>
+              <br />
+              <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+          
+          {/* <div>
+            <label htmlFor="sprints">Sprints</label>
+            <input type="text" name="sprints" value={sprints} onChange={(e) => setSprints(e.target.value)} />
+          </div> */}
+          
+          <div>
+            <label htmlFor="description">Description:</label>
+            <br />
+            <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          </div>
+          
+          <div>
+            <label htmlFor="sprintDuration">Sprint Duration:</label>
+            <br />
+            <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
+          </div>
+          
+          {/* <div>
+            <label htmlFor="timestamps">Created at</label>
+            <br />
+            <input type="text" name="timestamps" value={timestamps} onChange={(e) => setTimestamps(e.target.value)} />
+          </div> */}
 
-        <div>
-          <label htmlFor="name">Name</label>
-          <br />
-          <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <div>
+            <label htmlFor="username">Add Developers:</label>
+            <br />
+            {/* //TODO: select */}
+            <select name="email" onChange={(e) => setEmail(e.target.value)}>
+            {users && users.map((user) => {
+              console.log("hi", user.username)
+              return (             
+              <option value={user.email}>{user.username}</option>
+              
+              )
+            })}
+            </select>
+            <div>
+              <button type="submit">Save</button>
+            </div>
+                      
+            {/* <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} /> */}
+          </div> 
         </div>
+              
         
-        {/* <div>
-          <label htmlFor="sprints">Sprints</label>
-          <input type="text" name="sprints" value={sprints} onChange={(e) => setSprints(e.target.value)} />
-        </div> */}
         
-        <div>
-          <label htmlFor="description">Description</label>
-          <br />
-          <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
-        </div>
-        
-        <div>
-          <label htmlFor="sprintDuration">Sprint Duration</label>
-          <br />
-          <input type="text" name="sprintDuration" value={sprintDuration} onChange={(e) => setSprintDuration(e.target.value)} />
-        </div>
-        
-        {/* <div>
-          <label htmlFor="timestamps">Created at</label>
-          <br />
-          <input type="text" name="timestamps" value={timestamps} onChange={(e) => setTimestamps(e.target.value)} />
-        </div> */}
-
-        <div>
-          <label htmlFor="username">Add Developers</label>
-          <br />
-          {/* //TODO: select */}
-          <select name="email" onChange={(e) => setEmail(e.target.value)}>
-          {users && users.map((user) => {
-            console.log("hi", user.username)
-            return (             
-             <option value={user.email}>{user.username}</option>
-             
-            )
-          })}
-          </select>
-                    
-          {/* <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} /> */}
-        </div>       
-        
-        <button type="submit">Save</button>
       </form>
-      <button onClick={deleteProject}> Delete Project</button>
+      <button className='del' onClick={deleteProject}> Delete Project</button>
     </div>
   );
 }

@@ -46,7 +46,7 @@ function ProjectDetailsPage() {
           <h4>{project.sprintDuration} weeks</h4>
           <h5>Created: {moment(project.createdAt).format('DD-MM-YYYY HH:MM A')}</h5>
           <h5>Last update: {moment(project.updatedAt).format('DD-MM-YYYY HH:MM A')}</h5>
-          <p>Users: {project.users[0].username}</p>
+          {/* <p>Users: {project.users[0].username}</p> */}
           {/* //TODO: map users bellow */}
           {/* <p>backp:{project.backlog</p>           */}
         </>

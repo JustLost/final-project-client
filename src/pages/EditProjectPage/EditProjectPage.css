@@ -1,29 +1,49 @@
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    /* background-color: white; */
+.edit-project{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color:white;
-    margin-top: 150px;
-   
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    
 }
-.modal-content{
-    width: 400px;
-    background-color: rgb(80, 4, 4);
+.proj-inputs {
+    background-color:rgb(105, 4, 4) ;
+    color: white;
+    min-width: 600px;
+    min-height: 400px;
+    border-radius: 20px;
+    padding-top: 50px;
+}
+.del{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px rgb(105, 4, 4) solid;
     border-radius: 10px;
+    color: rgb(105, 4, 4);
 }
-.modal-header, .modal-footer{
-    padding: 10px;
+.del:hover{
+    background-color: rgb(105, 4, 4);
+    color: white;
 }
-.modal-title{
-    margin: 0;
+
+.proj-inputs select{
+    border-radius: 10px;
+    min-width: 150px;
+    height: 27px;
+    padding: 5px;
+    margin: 10px;
 }
-.modal-body{
-    padding: 10px;
-    border-top: 1px solid rgb(194, 191, 191);
-    border-bottom: 1px solid rgb(194, 191, 191);
+.proj-inputs input{
+    margin: 10px;
+}
+.proj-inputs button{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: white 2px solid;
+    margin: 10px;
+    background-color: rgb(105, 4, 4);
+    color: white;
+}
+.proj-inputs button:hover{
+    background-color: white;
+    color: rgb(105, 4, 4);
 }

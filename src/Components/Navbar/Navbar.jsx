@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import "./Navbar.css"
+import scrumImage from "../../images/scrumWhite.png"
 
 function Navbar() {
     const { loggedIn, user, logoutUser } = useContext(AuthContext);
@@ -9,17 +10,16 @@ function Navbar() {
       <nav>
         <div className="nav">
           <div className="home">
-            <Link to="/"> Homepage </Link>
+            <Link to="/"><img src={scrumImage} alt="" />  Agilize </Link>
           </div>
 
           <div className="nav-left">
             {loggedIn && (
               
             <div className="nav-right">
+                            
+              <p>Welcome, {user.username}</p>
               <Link className="links" to="/projects"> Projects </Link>
-              {user.role}
-              <p>{user.username}</p>
-              {/* photo */}
               <button onClick={logoutUser}>Logout</button>
             </div>
             )}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AddSprintForm from '../../Components/AddSprintForm/AddSprintForm';
+import "./SprintsPage.css"
 
 
 function SprintsPage() {
@@ -25,12 +26,12 @@ function SprintsPage() {
     }, []);
 
     return (
-        <div>
+        <div className='sprints-list'>
             <div>
-                <h1>SprintsPage</h1>
+                <h1>Sprints list</h1>
                 {sprints.map((sprint) => {
                     return (
-                        <div key="task._id">
+                        <div className='sprints' key="task._id">
                             <Link to={`/sprints/${sprint._id}`}>
                                 <h3>{sprint.name}</h3>                                
                             </Link>
