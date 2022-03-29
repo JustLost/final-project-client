@@ -17,17 +17,20 @@
     font-weight: 700;
     border-bottom: 2px solid black;
     padding-bottom: 2px;
+    
+
 }
 .a:hover{
     border: none;
     color: rgb(139, 1, 1);
+    border-bottom: 2px solid white;
 }
 .detail-box button{
     padding: 10px 20px;
     border-radius: 5px;
     background-color: rgb(139, 1, 1);
     color: white;
-    border: none;
+    border: 2px solid ;
     margin: 10px 20px;
 }
 .detail-box button:hover{
@@ -36,8 +39,7 @@
     background-color: white;
 }
 .detail-box img{
-    max-height: 100px;
-    
+    max-height: 100px;    
 }
 
 .detail-box h4, h3, p, h5{
