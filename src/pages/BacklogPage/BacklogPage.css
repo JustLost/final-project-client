@@ -3,3 +3,12 @@
     justify-content: space-evenly;
     
 }
+.sprints a{
+    color: #6c0000;
+    font-size: large;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+.sprints a:hover{
+    color: white;
+}

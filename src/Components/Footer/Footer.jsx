@@ -9,11 +9,11 @@ function Footer() {
   return (
     <div className='footer'>
       <div>
-       <h2>ritaCunha®</h2>
+        <h2>ritaCunha®</h2>
       </div>
       <div >
-      <Link className="footer-images" target="_blank" to={{pathname:"https://github.com/JustLost"}}> <img className='footer-images' src={gitImage} alt="github logo" /></Link>
-      <Link className="footer-images" target="_blank" to={{pathname:"https://www.linkedin.com/in/a-rita-cunha/"}}><img className='footer-images' src={linkImage} alt="linkdin logo" /></Link>  
+        <Link className="footer-images" target="_blank" to={{pathname:"https://github.com/JustLost"}}> <img className='footer-images' src={gitImage} alt="github logo" /></Link>
+        <Link className="footer-images" target="_blank" to={{pathname:"https://www.linkedin.com/in/a-rita-cunha/"}}><img className='footer-images' src={linkImage} alt="linkdin logo" /></Link>  
       
       </div>
       

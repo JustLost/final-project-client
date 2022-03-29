@@ -39,7 +39,7 @@ function BacklogPage() {
                   return (
                     <div className='sprints' key={task._id}>
                         <Link to={`/tasks/${task._id}`}>
-                            <h3>{task.title}</h3>
+                            {task.title}
                         </Link>
                     </div>   
                 )

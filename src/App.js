@@ -16,6 +16,7 @@ import BacklogPage from './pages/BacklogPage/BacklogPage';
 import SprintsPage from './pages/SprintsPage/SprintsPage';
 import SprintDetailPage from './pages/SprintDetailPage/SprintDetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import TaskPage from './pages/TaskPage/TaskPage';
 // import SideBar from './Components/SideBar/SideBar';
 
 
@@ -39,7 +40,9 @@ function App() {
         <Route path="/backlog/:projectId" element={<BacklogPage />} />
         <Route path="/sprints" element={<SprintsPage />} />
 
-        <Route path="/sprints/:sprintId" element={<SprintDetailPage />} />             
+        <Route path="/sprints/:sprintId" element={<SprintDetailPage />} />    
+
+        <Route path="/tasks/:taskId" element={<TaskPage />} />        
 
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
