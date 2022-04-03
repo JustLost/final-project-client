@@ -11,11 +11,12 @@ function TaskPage() {
 
   const fetchTask = async () => {
       try {
-        let response = await
+        
         axios
-        .get(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
-        setTask(response.data);
-        console.log("task detail:", response.data)
+        .get(`${process.env.REACT_APP_API_URL}/backlog/task/${taskId}`, {headers: { Authorization: `Bearer ${storedToken}` }})
+        .then(response => setTask(response.data))
+        //setTask(response.data);
+        console.log("task detail:", task)
       } catch (error) {
         console.log(error)         
       }
@@ -28,7 +29,7 @@ function TaskPage() {
   return (
     <div>
         <div>
-            <h1>{task && task.title} TaskPage</h1>
+            <h1>{task && task.title} page</h1>
         </div>
         
     </div>

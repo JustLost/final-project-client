@@ -12,9 +12,9 @@ function Footer() {
         <h2>ritaCunha®</h2>
       </div>
       <div >
-        <Link className="footer-images" target="_blank" to={{pathname:"https://github.com/JustLost"}}> <img className='footer-images' src={gitImage} alt="github logo" /></Link>
-        <Link className="footer-images" target="_blank" to={{pathname:"https://www.linkedin.com/in/a-rita-cunha/"}}><img className='footer-images' src={linkImage} alt="linkdin logo" /></Link>  
-      
+        <a target="_blank" rel="noreferrer" href="https://github.com/JustLost"><img className='footer-images' src={gitImage} alt="github logo" /></a>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/a-rita-cunha"><img className='footer-images' src={linkImage} alt="linkdin logo" /></a>
+       
       </div>
       
     </div>

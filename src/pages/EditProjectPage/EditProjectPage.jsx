@@ -10,6 +10,7 @@ function EditProjectPage() {
   const [sprintDuration, setSprintDuration] = useState('');
   const [timestamps, setTimestamps] = useState('');
   const [users, setUsers] = useState([]);
+  const [projectUsers, setProjectUsers] = useState([])
   // const [username, setUsername] = useState;
   const [email, setEmail] = useState('');
 
@@ -28,23 +29,24 @@ function EditProjectPage() {
   const fetchProject = async () => {
       try {
           let response = await axios.get(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
-          let { name, description, sprints, sprintDuration, timestamps } = response.data;
+          let { name, description, sprints, sprintDuration, timestamps, users: projectUsers } = response.data;
           console.log(response.data)
           setName(name);
           setDescription(description);
           setSprints(sprints);
           setSprintDuration(sprintDuration);
           setTimestamps(timestamps);
-          
+          setProjectUsers(projectUsers);
+          //console.log(projectUsers)
       } catch (error) {
           console.log(error);
       }
   };
-//TODO fetch user slect map
+ 
   const fetchUsers = async () => {
     try {
         let response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {headers: { Authorization: `Bearer ${storedToken}` }});
-        console.log("userssss:", response.data)
+        console.log("userss:", response.data)
         setUsers(response.data)
     } catch (error) {
         console.log(error);
@@ -113,12 +115,25 @@ function EditProjectPage() {
           </div> */}
 
           <div>
+            <label htmlFor="projectUsers">Project users:</label>
+            <ul>
+            <p>{projectUsers && projectUsers.map((user) => {              
+              return(
+                <li>{`${user.username} as ${user.role}`}</li>
+              )
+            })}</p>
+            </ul>
+          </div>
+
+          <div>
             <label htmlFor="username">Add Developers:</label>
             <br />
-            {/* //TODO: select */}
             <select name="email" onChange={(e) => setEmail(e.target.value)}>
             {users && users.map((user) => {
-              console.log("hi", user.username)
+              if (projectUsers.some(u => u.username === user.username)){
+                return("")
+              }
+              //console.log("hi", user.username)
               return (             
               <option value={user.email}>{user.username}</option>
               
@@ -133,8 +148,6 @@ function EditProjectPage() {
           </div> 
         </div>
               
-        
-        
       </form>
       <button className='del' onClick={deleteProject}> Delete Project</button>
     </div>
