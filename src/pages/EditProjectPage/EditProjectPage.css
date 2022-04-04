@@ -6,7 +6,7 @@
     
 }
 .proj-inputs {
-    background-color:rgb(105, 4, 4) ;
+    background-color:#6c0000 ;
     color: white;
     min-width: 600px;
     min-height: 400px;
@@ -16,12 +16,12 @@
 .del{
     margin-top: 20px;
     padding: 10px 20px;
-    border: 2px rgb(105, 4, 4) solid;
+    border: 2px #6c0000 solid;
     border-radius: 10px;
-    color: rgb(105, 4, 4);
+    color: #6c0000;
 }
 .del:hover{
-    background-color: rgb(105, 4, 4);
+    background-color: #6c0000;
     color: white;
 }
 
@@ -40,10 +40,10 @@
     padding: 10px 20px;
     border: white 2px solid;
     margin: 10px;
-    background-color: rgb(105, 4, 4);
+    background-color: #6c0000;
     color: white;
 }
 .proj-inputs button:hover{
     background-color: white;
-    color: rgb(105, 4, 4);
+    color: #6c0000;
 }

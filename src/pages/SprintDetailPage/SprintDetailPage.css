@@ -19,7 +19,7 @@
 /* !tutorial */
 :root {
     --disabled-color: #fad6d6;
-    --background-color: #660404;
+    --background-color: #6c0000;
 }
 
 a {
@@ -83,7 +83,7 @@ select {
 
 .item:hover {
     cursor: pointer;
-    background-color: #660404;
+    background-color: #6c0000;
     color: white;
     border: 2px white solid;
 }
@@ -176,15 +176,15 @@ select {
 }
 
 .main-sprint button{
-    border: #660404 solid 2px;
+    border: #6c0000 solid 2px;
     width: 150px;
     height: 40px;
     border-radius: 10px;
-    color: #660404;
+    color: #6c0000;
 
 }
 .main-sprint button:hover {
-    background-color: #660404;
+    background-color: #6c0000;
     color: white;
 }
 
