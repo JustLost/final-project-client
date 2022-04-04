@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 function Col( {isOver, children} ) {
     const className = isOver ? " highlight-region" : "";

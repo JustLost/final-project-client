@@ -5,8 +5,8 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
-import { red } from '@mui/material/colors';
-import { alpha, styled } from '@mui/material/styles';
+import { red } from "@mui/material/colors";
+import { alpha, styled } from "@mui/material/styles";
 
 export default function SwitchesGroup() {
   const [state, setState] = React.useState({
@@ -53,13 +53,13 @@ export default function SwitchesGroup() {
   };
 
   const RedSwitch = styled(Switch)(({ theme }) => ({
-    '& .MuiSwitch-switchBase.Mui-checked': {
+    "& .MuiSwitch-switchBase.Mui-checked": {
       color: red[600],
-      '&:hover': {
+      "&:hover": {
         backgroundColor: alpha(red[600], theme.palette.action.hoverOpacity),
       },
     },
-    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+    "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
       backgroundColor: red[600],
     },
   }));

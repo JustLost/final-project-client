@@ -3,13 +3,13 @@
     flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    
+    padding-bottom: 0px;
 }
 .proj-inputs {
     background-color:#6c0000 ;
     color: white;
     min-width: 600px;
-    min-height: 400px;
+    min-height: 500px;
     border-radius: 20px;
     padding-top: 50px;
 }
@@ -34,6 +34,14 @@
 }
 .proj-inputs input{
     margin: 10px;
+    text-align: center;
+    min-width: 220px;
+}
+.proj-inputs textarea{
+    border-radius: 10px;
+    width: 210px;
+    min-height: 70px;
+    padding: 10px;
 }
 .proj-inputs button{
     border-radius: 10px;
@@ -46,4 +54,35 @@
 .proj-inputs button:hover{
     background-color: white;
     color: #6c0000;
+}
+.users-list  li{
+    color: white;
+    list-style-type: none;
+    padding: 2px 5px;
+    border: white 2px solid;
+    border-radius: 10px;
+    margin: 5px;
+    min-width: 220px;
+}
+.ul-list {
+    
+    width: 530px;
+   
+}
+#x-button{
+    background-color: white;
+    color: #6c0000;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 5px 0;
+    
+}
+#x-button:hover {
+    background-color: #6c0000;
+    color: white;
+}
+.u-list {
+    display: flex;
+    justify-content: center;
 }

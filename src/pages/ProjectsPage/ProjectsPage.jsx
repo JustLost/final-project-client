@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import AddProjectForm from "../../Components/AddProjectForm/AddProjectForm";
 import "./ProjectsPage.css"
-//import { ThemeContext } from '../../context/theme.context';
+//import { ThemeContext } from "../../context/theme.context";
 
 function ProjectsPage() {
   const [projects, setProjects] = useState([]);
@@ -12,7 +12,7 @@ function ProjectsPage() {
 
   const fetchProjects = async () => {
     try {
-      const storedToken = localStorage.getItem('authToken');
+      const storedToken = localStorage.getItem("authToken");
 
       let response = await 
         axios.get(`${process.env.REACT_APP_API_URL}/projects`, {

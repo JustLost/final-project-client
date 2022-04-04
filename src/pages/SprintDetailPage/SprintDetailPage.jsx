@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import "./SprintDetailPage.css"
+import AddTaskForm from "../../Components/AddTaskForm/AddTaskForm";
 
 import Item from "../../Components/Item/Item";
 import DropWrapper from "../../Components/DropWrapper/DropWrapper";
-import Col from '../../Components/Col/Col';
+import Col from "../../Components/Col/Col";
 
-const moment = require('moment');
+const moment = require("moment");
 
 const statuses = [ "To do", "Doing", "Merge Request", "Done", "Blocked" ];
 const data = null;
@@ -15,7 +16,7 @@ const data = null;
 function SprintDetailPage() {
     const [sprint, setSprint] = useState(null);
     const { sprintId } = useParams();
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
     const [showDetails, setShowDetails] = useState(false); 
 
     const [items, setItems] = useState(data);
@@ -61,31 +62,32 @@ function SprintDetailPage() {
     };
 
     return (
-    <div style={{overflow:"auto"}}>
-        <div className='main-sprint'>
+    <div style={{overflow:"auto", "min-width":"100vw", "margin-left":"2px"}}>
+        <div className="main-sprint">
            <h1>{sprint && sprint.name} sprint: </h1>
-           <button onClick={toggleShow}>{showDetails ? 'Hide Sprint Details' : 'Show Sprint Details'}</button>
+           <button onClick={toggleShow}>{showDetails ? "Hide Sprint Details" : "Show Sprint Details"}</button>
             {sprint && showDetails && (
-                <div className='hidden'>
+                <div className="hidden">
                     <h4>{sprint.duration} weeks duration</h4>
                     <div>
                         <h4>Planning at:</h4>
-                        <p>{moment(sprint.startingDate).format('DD-MM-YYYY HH:MM')}</p>
+                        <p>{moment(sprint.startingDate).format("DD-MM-YYYY HH:MM")}</p>
                     </div>
                     <div>
                         <h4>Review at:</h4>
-                        <p>{moment(sprint.review).format('DD-MM-YYYY HH:MM')}</p>
+                        <p>{moment(sprint.review).format("DD-MM-YYYY HH:MM")}</p>
                     </div>
                     <div>
                         <h4>Retrospective at:</h4>
-                        <p>{moment(sprint.retrospective).format('DD-MM-YYYY HH:MM')}</p>
+                        <p>{moment(sprint.retrospective).format("DD-MM-YYYY HH:MM")}</p>
                     </div>
                     <div>
-                        <h4>Standups at:</h4>
-                        <p>Everyday: {moment(sprint.standUps).format('HH:MM')}</p>
+                        <h4>Standups</h4>
+                        <p>Everyday: {moment(sprint.standUps).format("HH:MM")}</p>
                     </div>
-                    
+                                     
                 </div>
+                
             )} 
         </div>
         <div className={"row"}>
@@ -105,6 +107,10 @@ function SprintDetailPage() {
                     </div>
                 );
             })}
+        </div>
+        <div>
+            <button>Add task</button>
+            
         </div>
     </div>
   )

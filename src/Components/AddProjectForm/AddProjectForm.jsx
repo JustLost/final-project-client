@@ -12,7 +12,7 @@ function AddProjectForm(props) {
     e.preventDefault();
 
     const body = { name, sprints, description, sprintDuration };
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/projects`, body, {headers: { Authorization: `Bearer ${storedToken}` }})

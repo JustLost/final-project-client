@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import AddSprintForm from '../../Components/AddSprintForm/AddSprintForm';
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import AddSprintForm from "../../Components/AddSprintForm/AddSprintForm";
 import "./SprintsPage.css"
 
 
@@ -10,7 +10,7 @@ function SprintsPage() {
 
     const fetchSprints = async () => {
         try {
-            const storedToken = localStorage.getItem('authToken');
+            const storedToken = localStorage.getItem("authToken");
 
             let response = await axios.get(`${process.env.REACT_APP_API_URL}/sprints`, {
                 headers: { Authorization: `Bearer ${storedToken}` },
@@ -26,12 +26,12 @@ function SprintsPage() {
     }, []);
 
     return (
-        <div className='sprints-list'>
+        <div className="sprints-list">
             <div>
                 <h1>Sprints list</h1>
                 {sprints.map((sprint) => {
                     return (
-                        <div className='sprints' key="task._id">
+                        <div className="sprints" key="task._id">
                             <Link to={`/sprints/${sprint._id}`}>
                                 <h3>{sprint.name}</h3>                                
                             </Link>

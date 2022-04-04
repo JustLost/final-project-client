@@ -1,5 +1,5 @@
-// import React from 'react'
-// import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+// import React from "react"
+// import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 
 // function SideBar() {
 //   return (
@@ -12,7 +12,7 @@
 //     <SideNav.Nav defaultSelected="home">
 //         <NavItem eventKey="home">
 //             <NavIcon>
-//                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+//                 <i className="fa fa-fw fa-home" style={{ fontSize: "1.75em" }} />
 //             </NavIcon>
 //             <NavText>
 //                 Home
@@ -20,7 +20,7 @@
 //         </NavItem>
 //         <NavItem eventKey="charts">
 //             <NavIcon>
-//                 <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+//                 <i className="fa fa-fw fa-line-chart" style={{ fontSize: "1.75em" }} />
 //             </NavIcon>
 //             <NavText>
 //                 Charts

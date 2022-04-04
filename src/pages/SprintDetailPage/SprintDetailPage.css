@@ -16,6 +16,7 @@
     
 }
 
+
 /* !tutorial */
 :root {
     --disabled-color: #fad6d6;
@@ -116,7 +117,7 @@ select {
     padding: 20px;
     background-color: var(--background-color);
     border-radius: 10px;
-    
+    margin-left: 10px;
 }
 
 .col-header {

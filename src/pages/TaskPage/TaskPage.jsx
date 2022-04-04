@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from "react"
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 import "./TaskPage.css"
 
 function TaskPage() {
 
   const [task, setTask] = useState(null);
   const { taskId } = useParams();
-  const storedToken = localStorage.getItem('authToken');
+  const storedToken = localStorage.getItem("authToken");
 
   const fetchTask = async () => {
       try {

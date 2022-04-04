@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
-import AddSprintForm from '../../Components/AddSprintForm/AddSprintForm';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import AddSprintForm from "../../Components/AddSprintForm/AddSprintForm";
 import "./ProjectDetailsPage.css"
 import scrum from "../../images/scrum.png"
 
-const moment = require('moment');
+const moment = require("moment");
 
 function ProjectDetailsPage() {
   
   const [project, setProject] = useState(null);
   const { projectId } = useParams();
-  const storedToken = localStorage.getItem('authToken');
+  const storedToken = localStorage.getItem("authToken");
 
   const [show, setShow] = useState(false)
   
@@ -34,7 +34,7 @@ function ProjectDetailsPage() {
 
   return (
     <div> 
-      <div className='detail-box'>
+      <div className="detail-box">
         <h1>{project && project.name} details:</h1>
         {project && (
           <>
@@ -44,8 +44,8 @@ function ProjectDetailsPage() {
             <img src={scrum} alt="scrum" />
             <h3>Sprint Duration:</h3>
             <h4>{project.sprintDuration} weeks</h4>
-            <h5>Created: {moment(project.createdAt).format('DD-MM-YYYY HH:MM A')}</h5>
-            <h5>Last update: {moment(project.updatedAt).format('DD-MM-YYYY HH:MM A')}</h5>
+            <h5>Created: {moment(project.createdAt).format("DD-MM-YYYY HH:MM A")}</h5>
+            <h5>Last update: {moment(project.updatedAt).format("DD-MM-YYYY HH:MM A")}</h5>
             {/* <p>Users: {project.users[0].username}</p> */}
             {/* //TODO: map users bellow */}
             {/* <p>backp:{project.backlog</p>           */}
@@ -68,10 +68,10 @@ function ProjectDetailsPage() {
                 
         </div>
         <br />
-        <Link className='a' to="/projects"> Back to Project List</Link>
+        <Link className="a" to="/projects"> Back to Project List</Link>
         <br />
-        {project && <Link to={"/sprints"}><button className='btn-border'>Sprints</button></Link>}
-        {project && <Link to={`/backlog/${project._id}`}><button className='btn-border'> Backlog </button></Link>}
+        {project && <Link to={"/sprints"}><button className="btn-border">Sprints</button></Link>}
+        {project && <Link to={`/backlog/${project._id}`}><button className="btn-border"> Backlog </button></Link>}
             
       </div>
     </div>

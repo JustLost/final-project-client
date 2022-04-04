@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { useState } from 'react'
+import { useState } from "react"
 import logo from "../../images/LOGO.png"
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from "@mui/material/styles";
 import Toggle from "../../Components/Toggle/Toggle"
 import "./HomePage.css"
 
