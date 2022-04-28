@@ -16,7 +16,7 @@ function DropWrapper({onDrop, children, status}) {
         }),
                 
     });
-    console.log("childreeeeeen:", children)
+    //console.log("childreeeeeen:", children)
     
     return (
         <div ref={drop} className={"drop-wrapper"}>

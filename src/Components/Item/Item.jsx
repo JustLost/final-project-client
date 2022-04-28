@@ -65,7 +65,7 @@ function Item( {item, index, moveItem, status} ) {
                 onClick={onOpen}
             >
                 <div  />
-                <p>{item.title}</p>
+                <p>{`${item.title}`}</p>
             </div>
             <Window
                 item={item}

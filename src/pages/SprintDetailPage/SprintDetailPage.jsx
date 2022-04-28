@@ -109,7 +109,7 @@ function SprintDetailPage() {
             })}
         </div>
         <div>
-            <button>Add task</button>
+            <Link to=""><button>Add task</button></Link>
             
         </div>
     </div>

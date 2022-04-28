@@ -4,7 +4,7 @@ import Modal from "react-modal";
 function Window({show, onClose, item}) {
     
     // document.getElementById("root") && Modal.setAppElement("#root");
-    //console.log("iteeem:", item)
+    console.log("iteeem:", item)
   return (    
     <Modal
         ariaHideApp={false}
@@ -23,6 +23,10 @@ function Window({show, onClose, item}) {
             <p>{item.description}</p>
             <h2>Status</h2>
             <p>{item.status}</p>
+            <h2>Tag</h2>
+            <p>{item.tag}</p>
+            <h2>Story points</h2>
+            <p>{item.storyPoints}</p>
         </div>
     </Modal>
   )

@@ -29,7 +29,12 @@ function TaskPage() {
   return (
     <div>
         <div>
-            <h1>{task && task.title} page</h1>
+            <h1>{task && task.title} details</h1>
+            <h3>Status: {task && task.status}</h3>
+            <h3>{task && task.description}</h3>
+            {task && task.creator}
+            {task && task.tag}
+            {task && task.storyPoints}
         </div>
         
     </div>

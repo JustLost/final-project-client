@@ -62,7 +62,7 @@ function AddTaskForm(props) {
         <div>
           <label htmlFor="description">Description</label>          
           <br />
-          <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
         {/* <div>
           <label htmlFor="creator">Creator</label>
@@ -93,7 +93,7 @@ function AddTaskForm(props) {
         </div>
         <div>
             <h4>Task Tag</h4>
-            <input type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)}  defaultChecked />
+            <input type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)} defaultChecked />
             <label htmlFor="tag">none</label>
 
             <input type="radio" name="myTagBox" value="User Story" onChange={(e) => setTag(e.target.value)} />
@@ -107,7 +107,7 @@ function AddTaskForm(props) {
         </div>
         <div>
             <h4>Story Points</h4>
-            <input type="radio" name="myPointsBox" value="1" onChange={(e) => setStoryPoints(e.target.value)} />
+            <input type="radio" name="myPointsBox" value="1" onChange={(e) => setStoryPoints(e.target.value)} defaultChecked />
             <label htmlFor="storyPoints">1</label>
 
             <input type="radio" name="myPointsBox" value="2" onChange={(e) => setStoryPoints(e.target.value)} />
