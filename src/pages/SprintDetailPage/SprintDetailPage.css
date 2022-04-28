@@ -139,10 +139,8 @@ select {
 }
 
 .modal {
-    background-color: #F4F5F7;
-    border-radius: 2px;
-    margin: 48px 0 80px;
-    min-height: 450px;
+    background-color: #dcdcdc00;
+    border-radius: 2px;    
     width: 400px;
     outline: none;
     padding: 20px;

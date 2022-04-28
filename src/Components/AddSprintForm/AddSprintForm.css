@@ -3,17 +3,17 @@
     left: 0;
     top: 0;
     right: 0;
- 
-    /* background-color: white; */
+    bottom: 0;
+    background-color: #dcdcdc00;
     display: flex;
     align-items: center;
     justify-content: center;
-    align-content: center;
     color:white;
-    margin-top: 150px;    
+    margin: auto;
+     
    
 }
-.modal-content{
+.modal-content {
     width: 400px;
     background-color: #6c0000;
     border-radius: 10px;

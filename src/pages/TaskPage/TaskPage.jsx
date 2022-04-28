@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./TaskPage.css"
 
-function TaskPage() {
+function TaskPage(props) {
 
   const [task, setTask] = useState(null);
   const { taskId } = useParams();
@@ -25,18 +25,28 @@ function TaskPage() {
   useEffect(() => {
     fetchTask();
   }, []);
+  
+   
+  
 
   return (
-    <div>
-        <div>
-            <h1>{task && task.title} details</h1>
+    <div className="modal" onClick={props.onClose}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-header">
+            <h2 className="modal-title">{task && task.title} details</h2>
+          </div>
+          <div className="modal-body">
             <h3>Status: {task && task.status}</h3>
             <h3>{task && task.description}</h3>
-            {task && task.creator}
-            {task && task.tag}
-            {task && task.storyPoints}
+            <h3>{task && task.creator}</h3>
+            <h3>{task && task.tag}</h3>
+            <h3>{task && task.storyPoints}</h3>
+            </div>
+          <div className="modal-footer">
+            <button onClick={props.onClose} className="button">close</button>
         </div>
-        
+      </div>
+      
     </div>
   )
 }

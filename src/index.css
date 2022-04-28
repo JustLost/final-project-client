@@ -98,10 +98,10 @@ select {
 }
 
 .modal {
-  background-color: #F4F5F7;
+  background-color: #dcdcdc00;
   border-radius: 2px;
-  margin: 48px 0 80px;
-  min-height: 450px;
+  margin: auto;
+  max-height: 400px;
   width: 800px;
   outline: none;
   padding: 20px;
