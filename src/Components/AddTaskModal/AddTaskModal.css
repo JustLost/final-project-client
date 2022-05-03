@@ -1,0 +1,76 @@
+.button-task{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px #6c0000 solid;
+    color:#6c0000;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+.button-task:hover{
+    background-color: #6c0000;
+    border-radius: 10px;
+    border: 2px white solid;
+    color:white;
+}
+.button-task-add{
+    background-color: #6c0000;
+    border: 2px white solid;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 25px 0 15px;
+    font-size: larger;
+}
+.button-task-add:hover{
+    font-weight: 500;
+    background-color: white;
+    border: 2px #6c0000 solid;
+    color: #6c0000;
+}
+#task input{
+margin: 10px;
+border: 2px white solid;
+}
+#task input:hover{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task input:focus{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task textarea{
+    max-width: 170px;
+    min-width: 170px;
+    border-radius: 10px;
+    min-height: 50px;
+    max-height: 150px;
+    margin: 10px;
+    border: white 2px solid;
+}
+#task textarea:hover{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task textarea:focus{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task select{    
+    border-radius: 10px;
+    height: 30px;
+    margin: 10px 0 15px;
+}
+#task select:hover{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task select:focus{
+    background-color: #ffffffce;
+    border: 2px white solid;
+}
+#task h4{
+    margin: 15px 0 10px;
+    font-weight: 400;
+}

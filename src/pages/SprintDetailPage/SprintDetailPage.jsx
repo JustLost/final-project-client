@@ -62,10 +62,10 @@ function SprintDetailPage() {
             return  [ ...newItems ];
         });
     };
-    
+
 
     return (
-    <div style={{overflow:"auto", "min-width":"100vw", "margin-left":"2px"}}>
+    <div >
         <div className="main-sprint">
            <h1>{sprint && sprint.name} sprint: </h1>
            <button onClick={toggleShow}>{showDetails ? "Hide Sprint Details" : "Show Sprint Details"}</button>
@@ -93,7 +93,7 @@ function SprintDetailPage() {
                 
             )} 
         </div>
-        <div className={"row"}>
+        <div className={"row scroll"} style={{overflow:"scroll", "min-width":"100vw", "margin":"5px"}} >
             {statuses.map((s, index) => {
                 return (                    
                     <div key={index} className={"col-wrapper"}>
@@ -112,7 +112,7 @@ function SprintDetailPage() {
             })}
         </div>
         <div> 
-            <button onClick={() => setShow(true)}>Add task</button>
+            <button className="add-button" onClick={() => setShow(true)}>Add task</button>
             <AddTaskModal onClose={() => setShow(false)}show={show}/>
         </div>
     </div>

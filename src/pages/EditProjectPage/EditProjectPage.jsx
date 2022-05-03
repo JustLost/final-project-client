@@ -60,7 +60,7 @@ function EditProjectPage() {
     } catch (error) {
         console.log(error);
     }
-};
+  };
 
   useEffect(() => {
     fetchProject();
@@ -117,12 +117,7 @@ function EditProjectPage() {
               <br />
               <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
             </div>
-          
-          {/* <div>
-            <label htmlFor="sprints">Sprints</label>
-            <input type="text" name="sprints" value={sprints} onChange={(e) => setSprints(e.target.value)} />
-          </div> */}
-          
+                    
           <div>
             <label htmlFor="description">Description:</label>
             <br />
