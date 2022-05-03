@@ -52,7 +52,7 @@ function AddTaskForm(props) {
 
   return (
     <div className="task-box">
-      <h3>Add Task</h3>
+      <h2>Add Task</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Task title</label>          
@@ -63,18 +63,13 @@ function AddTaskForm(props) {
           <label htmlFor="description">Description</label>          
           <br />
           <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
-        </div>
-        {/* <div>
-          <label htmlFor="creator">Creator</label>
-          <br />
-          <input type="text" name="standUps" value={creator} onChange={(e) => setCreator(e.target.value)} />
-        </div> */}
+        </div>        
         <div>
           <label htmlFor="assignTo">Assign To</label>
           <br />
           <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
         </div>
-        <div>
+        {/* <div>
             <h4>Task Status</h4>
             <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
             <label htmlFor="role">To do</label>
@@ -90,9 +85,9 @@ function AddTaskForm(props) {
 
             <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
             <label htmlFor="role">Done</label>
-        </div>
+        </div> */}
         <div>
-            <h4>Task Tag</h4>
+            <h4>Task Tag:</h4>
             <input type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)} defaultChecked />
             <label htmlFor="tag">none</label>
 
@@ -106,7 +101,7 @@ function AddTaskForm(props) {
             <label htmlFor="tag">Bug Fix</label>
         </div>
         <div>
-            <h4>Story Points</h4>
+            <h4>Story Points:</h4>
             <input type="radio" name="myPointsBox" value="1" onChange={(e) => setStoryPoints(e.target.value)} defaultChecked />
             <label htmlFor="storyPoints">1</label>
 

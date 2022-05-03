@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./SprintDetailPage.css"
-import AddTaskForm from "../../Components/AddTaskForm/AddTaskForm";
+import AddTaskModal from "../../Components/AddTaskModal/AddTaskModal";
+import AddTaskForm from "../../Components/AddTaskForm/AddTaskForm"
 
 import Item from "../../Components/Item/Item";
 import DropWrapper from "../../Components/DropWrapper/DropWrapper";
@@ -17,7 +18,8 @@ function SprintDetailPage() {
     const [sprint, setSprint] = useState(null);
     const { sprintId } = useParams();
     const storedToken = localStorage.getItem("authToken");
-    const [showDetails, setShowDetails] = useState(false); 
+    const [showDetails, setShowDetails] = useState(false);
+    const [show, setShow] = useState(false)
 
     const [items, setItems] = useState(data);
 
@@ -60,6 +62,7 @@ function SprintDetailPage() {
             return  [ ...newItems ];
         });
     };
+    
 
     return (
     <div style={{overflow:"auto", "min-width":"100vw", "margin-left":"2px"}}>
@@ -108,12 +111,12 @@ function SprintDetailPage() {
                 );
             })}
         </div>
-        <div>
-            <Link to=""><button>Add task</button></Link>
-            
+        <div> 
+            <button onClick={() => setShow(true)}>Add task</button>
+            <AddTaskModal onClose={() => setShow(false)}show={show}/>
         </div>
     </div>
-  )
+  );
 }
 
 export default SprintDetailPage

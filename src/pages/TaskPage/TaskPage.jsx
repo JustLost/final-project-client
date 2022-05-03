@@ -26,8 +26,7 @@ function TaskPage(props) {
     fetchTask();
   }, []);
   
-   
-  
+    
 
   return (
     <div className="modal" onClick={props.onClose}>
@@ -36,11 +35,16 @@ function TaskPage(props) {
             <h2 className="modal-title">{task && task.title} details</h2>
           </div>
           <div className="modal-body">
-            <h3>Status: {task && task.status}</h3>
-            <h3>{task && task.description}</h3>
-            <h3>{task && task.creator}</h3>
-            <h3>{task && task.tag}</h3>
-            <h3>{task && task.storyPoints}</h3>
+            <h3>Status:</h3> 
+            {task && task.status}
+            <h3>Description: </h3>
+            {task && task.description}
+            <h3>Creator: </h3>
+            {task && task.creator}
+            <h3>Task tag: </h3>
+            {task && task.tag}
+            <h3>Story Points: </h3>
+            {task && task.storyPoints}
             </div>
           <div className="modal-footer">
             <button onClick={props.onClose} className="button">close</button>
