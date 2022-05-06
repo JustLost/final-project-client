@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import DelProjectModal from "../../Components/DelProjectModal/DelProjectModal";
+
 import "./EditProjectPage.css"
 
 function EditProjectPage() {
@@ -19,12 +21,8 @@ function EditProjectPage() {
   const navigate = useNavigate();
   const storedToken = localStorage.getItem("authToken");
 
-  const deleteProject = () => {
-    axios
-      .delete(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, {headers: { Authorization: `Bearer ${storedToken}` }})
-      .then(() => navigate("/projects"))
-      .catch((err) => console.log(err));
-  };
+  const [show, setShow] = useState(false)
+
 
   const removeUser = (userEmail) => {
     const body = { email: userEmail };
@@ -171,6 +169,7 @@ function EditProjectPage() {
             </select>
             <div>
               <button type="submit">Save</button>
+              <button type="button" onClick={() => navigate(-1)}>Cancel</button>
             </div>
                       
             {/* <input type="text" name="users" value={users} onChange={(e) => setUsers(e.target.value)} /> */}
@@ -178,7 +177,11 @@ function EditProjectPage() {
         </div>
               
       </form>
-      <button className="del" onClick={deleteProject}> Delete Project</button>
+      <div>
+        <button className="del" onClick={() => setShow(true)}> Delete Project</button>
+        <DelProjectModal onClose={() => setShow(false)} show={show}/>
+      </div>
+      
     </div>
   );
 }

@@ -98,7 +98,7 @@ select {
 }
 
 .modal {
-  background-color: #dcdcdc00;
+  /* background-color: #dcdcdc00; */
   border-radius: 2px;
   margin: auto;
   max-height: 400px;

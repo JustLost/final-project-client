@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import "./TaskPage.css"
@@ -25,9 +25,7 @@ function TaskPage(props) {
   useEffect(() => {
     fetchTask();
   }, []);
-  
     
-
   return (
     <div className="modal" onClick={props.onClose}>
         <div className="modal-content" onClick={e => e.stopPropagation()}>

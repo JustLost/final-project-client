@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "./SprintDetailPage.css"
 import AddTaskModal from "../../Components/AddTaskModal/AddTaskModal";
-import AddTaskForm from "../../Components/AddTaskForm/AddTaskForm"
 
 import Item from "../../Components/Item/Item";
 import DropWrapper from "../../Components/DropWrapper/DropWrapper";
@@ -93,6 +92,7 @@ function SprintDetailPage() {
                 
             )} 
         </div>
+        
         <div className={"row scroll"} style={{overflow:"scroll", "min-width":"100vw", "margin":"5px"}} >
             {statuses.map((s, index) => {
                 return (                    

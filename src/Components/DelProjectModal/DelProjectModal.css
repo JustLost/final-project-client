@@ -1,0 +1,41 @@
+.modal p{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.del-header{
+    font-weight: 400;
+    margin-top: 30px;
+}
+.button{
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px white solid;
+    border-radius: 10px;
+    color: #6c0000;
+    font-weight: 600;
+}
+.button:hover{
+    background-color: #6c0000;
+    color: white;
+    border: 1px solid white;
+}
+
+.modal{
+    background-color: rgba(129, 124, 124, 0.425);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.c-button{
+    background-color: #6c0000;
+    padding: 5px 10px;
+    border: 1px white solid;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
+.c-button:hover{
+    background-color: white;
+    color: #6c0000;
+    border: 1px solid #6c0000;
+}

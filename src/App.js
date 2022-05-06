@@ -20,8 +20,6 @@ import TaskPage from "./pages/TaskPage/TaskPage";
 // import SideBar from "./Components/SideBar/SideBar";
 
 
-//TODO: 
-
 function App() {
   return (
     <div id="app" className="App">

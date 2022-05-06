@@ -140,7 +140,7 @@ select {
     background-color: rgba(252, 216, 216, 0.534);
 }
 .modal {
-    background-color: #dcdcdc00;
+    /* background-color: #dcdcdc00; */
     border-radius: 2px;    
     width: 400px;
     outline: none;
