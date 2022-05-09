@@ -122,16 +122,38 @@ select {
   display: flex;
 }
 
-.close-btn {
-  height: 40px;
-  width: 35px;
-  font-size: 20px;
-  color: #031D2C;
-  border: none;
-  border-radius: 25px;
+.close-btn-ctn h2{
+  padding-bottom: 5px;
+  border-bottom: 2px black solid;
+}
+.close-button{
+  background-color: rgb(236, 228, 228);
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: medium;
 }
 
-.close-btn:hover {
-  background-color: #DCDCDC;
+.close-button:hover {
+  background-color: black;
+  color: rgb(236, 228, 228);
 }
 
+.dd-modal {
+  display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+  background-color: rgb(236, 228, 228);
+  width: 350px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 50px;
+  
+}
+
+.button-div{
+  text-align: center;
+  margin-top: 20px;
+}

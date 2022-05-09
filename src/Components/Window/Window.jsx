@@ -2,30 +2,38 @@ import React from "react"
 import Modal from "react-modal";
 
 function Window({show, onClose, item}) {
-    //console.log("iteeem:", item)
   return (    
     <Modal
         ariaHideApp={false}
         isOpen={show}
         onRequestClose={onClose}
-        // className={"modal"}
+        className={"dd-modal"}
         overlayClassName={"overlay"}
     >
        
         <div className={"close-btn-ctn"}>
-            <h1 style={{ flex: "1 90%" }}>{item.title}</h1>
-            <button className="close-btn" onClick={onClose}>X</button>
+            <h2 style={{ flex: "1 90%" }}>{item.title}</h2>
+            
+            
         </div>
-        <div>
-            <h2>Description</h2>
+        <div className="task-details">
+            <h3>Description:</h3>
             <p>{item.description}</p>
-            <h2>Status</h2>
+            <h3>Status:</h3>
             <p>{item.status}</p>
-            <h2>Tag</h2>
+            <h3>Tag:</h3>
             <p>{item.tag}</p>
-            <h2>Story points</h2>
+            <h3>Story points:</h3>
             <p>{item.storyPoints}</p>
+            <h3>Assigned to:</h3>
+            <p>{item.assigndTo}</p>
+            
         </div>
+        <div className="button-div">
+            <button className="close-button" onClick={onClose}>close</button>
+        </div>
+        
+        
     </Modal>
   )
 }
