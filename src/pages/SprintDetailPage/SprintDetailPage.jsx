@@ -26,7 +26,7 @@ function SprintDetailPage() {
         try {
             let response = await axios
             .get(`${process.env.REACT_APP_API_URL}/sprints/${sprintId}`, {headers: { Authorization: `Bearer ${storedToken}` }});
-            console.log("respnseeee:", response.data)
+            //console.log("respnseeee:", response.data)
             setSprint(response.data);
             setItems(response.data.tasks);
         } catch (error) {
@@ -42,15 +42,23 @@ function SprintDetailPage() {
         setShowDetails(!showDetails);
     }
 
-    const onDrop = (item, monitor, status) => {
+    const onDrop = async (item, monitor, status) => {
         const mapping = statuses.find(si => si.status === status);
-
+        // console.log("mappiiiiiiiiing", mapping)
+        // console.log("statuuuuuuuus", status)
+        console.log("itemmmmmm", item)
         setItems(prevState => {
             const newItems = prevState
                 .filter(i => i.id !== item.id)
                 .concat({ ...item, status});
             return [ ...newItems ];
         });
+        const body = {title: item.title, status: status, description: item.description, creator: item.creator, tag: item.tag, assignedTo: item.assignedTo, storyPoints: item.storyPoints}
+        await axios
+            .put(`${process.env.REACT_APP_API_URL}/task/${item._id}`, body, {headers: { Authorization: `Bearer ${storedToken}` }})
+            .then(res => {
+                console.log(res)
+            })
     };
 
     const moveItem = (dragIndex, hoverIndex) => {

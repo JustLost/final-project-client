@@ -8,7 +8,7 @@ function DropWrapper({onDrop, children, status}) {
         accept: "CARD",
         drop: (item, monitor) => {
             onDrop(item, monitor, status);
-            console.log("iteeeem:" ,item)
+            //console.log("iteeeem:" ,item)
         },
         collect: monitor => ({
             isOver: monitor.isOver(),

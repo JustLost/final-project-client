@@ -16,7 +16,7 @@ function TaskPage(props) {
         .get(`${process.env.REACT_APP_API_URL}/backlog/task/${taskId}`, {headers: { Authorization: `Bearer ${storedToken}` }})
         .then(response => setTask(response.data))
         //setTask(response.data);
-        console.log("task detail:", task)
+        //console.log("task detail:", task)
       } catch (error) {
         console.log(error)         
       }
