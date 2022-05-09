@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./SignupModa.css"
 
 function SignupModal(props) {
     const [username, setUsername] = useState("");
@@ -54,15 +55,15 @@ function SignupModal(props) {
                     </div>
                     <div className="modal-body">
                         <form onSubmit={handleSubmit}>
-                            <div>
+                            <div className="sign-modal">
                                 <label htmlFor="username">Username</label>
                                 <input type="text" name="username" value={username} onChange={handleUsername} />
                             </div>
-                            <div>
+                            <div className="sign-modal">
                                 <label htmlFor="email">Email</label>
                                 <input type="email" name="email" value={email} onChange={handleEmail} />
                             </div>        
-                            <div>
+                            <div className="sign-modal">
                                 <label htmlFor="password">Password</label>
                                 <input type="password" name="password" value={password} onChange={handlePassword} />
                             </div>
@@ -70,20 +71,24 @@ function SignupModal(props) {
                                 <label htmlFor="imageUrl">Profile Pic</label>
                                 <input type="file" name="imageUrl" value={imageUrl} onChange={handleImageUrl} />
                             </div> */}
-                            <div>
-                                <input type="radio" name="radio" value="Scrum Master" onChange={handleRole} />
-                                <label htmlFor="role">Scrum Master</label>
-
-                                <input type="radio" name="radio" value="Project Owner" onChange={handleRole} />
-                                <label htmlFor="role">Project Owner</label>
-
-                                <input type="radio" name="radio" value="Developer" onChange={handleRole} />
-                                <label htmlFor="role">Developer</label>
+                            <div className="radio-modal">
+                                <div>
+                                    <input type="radio" name="radio" value="Scrum Master" onChange={handleRole} />
+                                    <label htmlFor="role">Scrum Master</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="radio" value="Project Owner" onChange={handleRole} />
+                                    <label htmlFor="role">Project Owner</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="radio" value="Developer" onChange={handleRole} />
+                                    <label htmlFor="role">Developer</label>
+                                </div>                                
                             </div>
                             
-                            <button type="submit"> Create Account </button>
+                            <button className="log-button" type="submit"> Create Account </button>
 
-                            <p>
+                            <p className="log-p">
                                 Already have an account? <a href="/login">Go to login.</a>
                             </p>
                         </form>

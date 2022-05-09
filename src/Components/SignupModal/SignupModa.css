@@ -1,0 +1,17 @@
+.sign-modal{
+    display: flex;
+    flex-direction: column;
+}
+.sign-modal input{    
+    max-width: 200px;
+    margin: auto;
+}
+.radio-modal{
+    display: flex;
+    margin: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.radio-modal input{
+    margin: 5px;
+}

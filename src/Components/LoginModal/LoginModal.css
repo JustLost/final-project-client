@@ -1,0 +1,22 @@
+.log-modal{
+    display: flex;
+    flex-direction: column;
+}
+.log-button{
+    margin: 20px;
+}
+label{
+    margin: 10px;
+}
+.log-p{
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+.log-p a{
+    padding-left: 0;
+    border-bottom: 1px white solid;
+}
+.log-modal input{
+    max-width: 200px;
+    margin: auto;
+}

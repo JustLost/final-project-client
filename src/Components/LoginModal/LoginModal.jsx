@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
+import "./LoginModal.css"
 
 function LoginModal(props) {
     const [username, setUsername] = useState("");
@@ -40,19 +41,19 @@ function LoginModal(props) {
                 <div className="modal-header">
                     <h3 className="modal-title">Login</h3>
                 </div>
-                <div className="modal-body">
+                <div className="modal-body log-modal">
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="username">Username</label>
+                    <div className="log-modal">
+                        <label htmlFor="username">Username:</label>
                         <input type="text" name="username" value={username} onChange={handleUsername} />
                     </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
+                    <div className="log-modal">
+                        <label htmlFor="password">Password:</label>
                         <input type="password" name="password" value={password} onChange={handlePassword} />
                     </div>
-                    <button type="submit"> Login</button>
+                    <button className="log-button" type="submit"> Login</button>
 
-                    <p>You don't have an account yet? <a href="/signup">Create one here.</a></p>
+                    <p className="log-p">You don't have an account yet? <a href="/signup">Create one here.</a></p>
                 </form>
                 </div>
                 <div className="modal-footer">
