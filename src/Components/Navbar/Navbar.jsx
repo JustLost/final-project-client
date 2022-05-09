@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import "./Navbar.css"
 import scrumImage from "../../images/scrumwa.png"
+import SignupModal from "../SignupModal/SignupModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 function Navbar() {
     const { loggedIn, user, logoutUser } = useContext(AuthContext);
+    const [ show, setShow ] = useState(false)
+    const [ show1, setShow1] = useState(false)
     return (
       <nav>
         <div className="nav">
@@ -26,9 +30,14 @@ function Navbar() {
           
             {!loggedIn && (
             <div className="signIn">
-              <Link  to="/signup"> Signup </Link>
+              <button type="button" onClick={() => setShow(true)} >Signup</button>
+              <SignupModal onClose={() => setShow(false)} show={show} />
+
+              <button type="button" onClick={() => setShow1(true)} >Login</button>
+              <LoginModal onClose={() => setShow1(false)} show={show1} />
+              {/* <Link  to="/signup"> Signup </Link> */}
               
-              <Link to="/login"> Login </Link>
+              {/* <Link to="/login"> Login </Link> */}
             </div>
             )}
           </div>
