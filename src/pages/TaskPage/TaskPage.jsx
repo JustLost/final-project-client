@@ -25,7 +25,7 @@ function TaskPage(props) {
   useEffect(() => {
     fetchTask();
   }, []);
-    
+  
   return (
     <div className="modal" onClick={props.onClose}>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -43,10 +43,10 @@ function TaskPage(props) {
             {task && task.tag}
             <h3>Story Points: </h3>
             {task && task.storyPoints}
-            </div>
+          </div>
           <div className="modal-footer">
             <button onClick={props.onClose} className="button">close</button>
-        </div>
+          </div>
       </div>
       
     </div>

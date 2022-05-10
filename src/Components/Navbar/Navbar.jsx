@@ -14,7 +14,7 @@ function Navbar() {
       <nav>
         <div className="nav">
           <div className="home">
-            <Link to="/"><img src={scrumImage} alt="" /></Link>
+            <Link to="/"><img src={scrumImage} alt="white-logo" /></Link>
           </div>
 
           <div className="nav-left">
@@ -24,20 +24,17 @@ function Navbar() {
                             
               <p>Welcome, {user.username}</p>
               <Link className="links" to="/projects"> Projects </Link>
-              <button onClick={logoutUser}>Logout</button>
+              <button onClick={logoutUser} className="log-nav-btn" component={Link} to="/home">Logout</button>
             </div>
             )}
           
             {!loggedIn && (
             <div className="signIn">
-              <button type="button" onClick={() => setShow(true)} >Signup</button>
+              <button className="sign-nav-btn" onClick={() => setShow(true)}>Signup</button>
               <SignupModal onClose={() => setShow(false)} show={show} />
 
-              <button type="button" onClick={() => setShow1(true)} >Login</button>
-              <LoginModal onClose={() => setShow1(false)} show={show1} />
-              {/* <Link  to="/signup"> Signup </Link> */}
-              
-              {/* <Link to="/login"> Login </Link> */}
+              <button className="log-nav-btn" onClick={() => setShow1(true)}>Login</button>
+              <LoginModal onClose={() => setShow1(false)} show={show1} />              
             </div>
             )}
           </div>

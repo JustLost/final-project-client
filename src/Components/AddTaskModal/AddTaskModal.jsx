@@ -177,7 +177,7 @@ function AddTaskModal(props) {
 
           <div>
             <h4>Task Tag:</h4>
-            <input type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)} defaultChecked />
+            <input className="task-input" type="radio" name="myTagBox" value="none" onChange={(e) => setTag(e.target.value)} defaultChecked />
             <label htmlFor="tag">none</label>
 
             <input type="radio" name="myTagBox" value="User Story" onChange={(e) => setTag(e.target.value)} />

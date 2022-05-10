@@ -29,7 +29,7 @@
     color: #6c0000;
 }
 #task input{
-margin: 10px;
+margin: 5px 2px;
 border: 2px white solid;
 }
 #task input:hover{

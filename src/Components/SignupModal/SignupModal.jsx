@@ -86,7 +86,7 @@ function SignupModal(props) {
                                 </div>                                
                             </div>
                             
-                            <button className="log-button" type="submit"> Create Account </button>
+                            <button className="log-nav-btn log-button" type="submit"> Create Account </button>
 
                             <p className="log-p">
                                 Already have an account? <a href="/login">Go to login.</a>

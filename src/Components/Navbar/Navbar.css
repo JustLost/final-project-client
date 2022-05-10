@@ -45,15 +45,16 @@ nav{
     
 }
 
-.nav button{
+.log-nav-btn{
     background-color: white;
     color: #6c0000;
     border: 2px solid #6c0000;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 5px 10px;
     margin-left: 40px;
+    font-weight: 600;
 }
-.nav button:hover{
+.log-nav-btn:hover{
     border: 2px white solid;
     background-color: #6c0000;
     color: white;
@@ -70,4 +71,13 @@ nav{
     border: 2px solid white;
     border-radius:5px ;
 }
-
+.sign-nav-btn {
+    background-color: #6c0000;
+    color: white;
+    border: none;
+    border-bottom: white 1px solid;
+    font-size: medium;
+}
+.sign-nav-btn:hover{
+    border-bottom: white 2px solid;
+}

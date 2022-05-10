@@ -51,7 +51,7 @@ function LoginModal(props) {
                         <label htmlFor="password">Password:</label>
                         <input type="password" name="password" value={password} onChange={handlePassword} />
                     </div>
-                    <button className="log-button" type="submit"> Login</button>
+                    <button className="log-nav-btn log-button" type="submit"> Login</button>
 
                     <p className="log-p">You don't have an account yet? <a href="/signup">Create one here.</a></p>
                 </form>

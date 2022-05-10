@@ -64,12 +64,12 @@ function AddTaskForm(props) {
           <br />
           <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>        
-        <div>
+        {/* <div>
           <label htmlFor="assignTo">Assign To</label>
           <br />
           <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
         </div>
-        {/* <div>
+        <div>
             <h4>Task Status</h4>
             <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
             <label htmlFor="role">To do</label>
