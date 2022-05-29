@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import "./Navbar.css"
 import scrumImage from "../../images/scrumwa.png"
@@ -11,6 +11,14 @@ function Navbar() {
     const [ show, setShow ] = useState(false)
     const [ show1, setShow1] = useState(false)
 
+    const navigate = useNavigate()
+
+    const logoutRedirect = () => {
+      logoutUser()
+      setShow(false)
+      setShow1(false)
+      navigate("/")
+    }
     const toggle = () => {
       if (show) { 
         setShow(false)
@@ -44,7 +52,7 @@ function Navbar() {
             <div className="nav-right">                            
               <p>Welcome, {user.username}</p>
               <Link className="links" to="/projects"> Projects </Link>
-              <button onClick={logoutUser} className="log-nav-btn" component={Link} to="/">Logout</button>
+              <button onClick={logoutRedirect} className="log-nav-btn">Logout</button>
             </div>
             )}
           
