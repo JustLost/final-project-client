@@ -20,3 +20,15 @@ label{
     max-width: 200px;
     margin: auto;
 }
+.toggle{
+    border-left: 1px #6c0000 solid;
+    border-right: 1px #6c0000 solid;
+    border-top: 1px #6c0000 solid;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: #6c0000;
+    border-radius: 5px;
+}
+.toggle:hover {
+    border: 1px solid white;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignupModa.css"
+import LoginModal from "../LoginModal/LoginModal";
 
 function SignupModal(props) {
     const [username, setUsername] = useState("");
@@ -17,6 +18,8 @@ function SignupModal(props) {
     const handleEmail = (e) => setEmail(e.target.value);
     const handleImageUrl = (e) => setImageUrl(e.target.value);
     const handleRole = (e) => setRole(e.target.value);
+
+    const [show, setShow] = useState(false)
 
     const closeOnEscapeKeyDown = (e) => {
         if((e.charCode || e.keyCode) === 27){
@@ -89,8 +92,9 @@ function SignupModal(props) {
                             <button className="log-nav-btn log-button" type="submit"> Create Account </button>
 
                             <p className="log-p">
-                                Already have an account? <a href="/login">Go to login.</a>
+                                Already have an account? <button className="toggle" onClick={() => {props.toggle()}}>Go to login.</button>
                             </p>
+                            <LoginModal onClose={() => setShow(false)} show={show}/>
                         </form>
                     </div>
                     <div className="modal-footer">

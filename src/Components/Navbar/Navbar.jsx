@@ -10,6 +10,17 @@ function Navbar() {
     const { loggedIn, user, logoutUser } = useContext(AuthContext);
     const [ show, setShow ] = useState(false)
     const [ show1, setShow1] = useState(false)
+
+    const toggle = () => {
+      if (show) { 
+        setShow(false)
+        setShow1(true) }
+      else if (show1) {
+        setShow1(false)
+        setShow(true)
+      }
+    }
+    
     return (
       <nav>
         <div className="nav">
@@ -18,25 +29,26 @@ function Navbar() {
           </div>
 
           <div className="nav-left">
-            {loggedIn && (
-              
-            <div className="nav-right">
-                            
-              <p>Welcome, {user.username}</p>
-              <Link className="links" to="/projects"> Projects </Link>
-              <button onClick={logoutUser} className="log-nav-btn" component={Link} to="/home">Logout</button>
-            </div>
-            )}
-          
+
             {!loggedIn && (
             <div className="signIn">
               <button className="sign-nav-btn" onClick={() => setShow(true)}>Signup</button>
-              <SignupModal onClose={() => setShow(false)} show={show} />
+              <SignupModal toggle={toggle} onClose={() => setShow(false)} show={show} />
 
               <button className="log-nav-btn" onClick={() => setShow1(true)}>Login</button>
-              <LoginModal onClose={() => setShow1(false)} show={show1} />              
+              <LoginModal toggle={toggle} onClose={() => setShow1(false)} show={show1} />              
             </div>
             )}
+            {loggedIn && (
+              
+            <div className="nav-right">                            
+              <p>Welcome, {user.username}</p>
+              <Link className="links" to="/projects"> Projects </Link>
+              <button onClick={logoutUser} className="log-nav-btn" component={Link} to="/">Logout</button>
+            </div>
+            )}
+          
+            
           </div>
         </div>
       </nav>

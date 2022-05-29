@@ -53,7 +53,9 @@ function LoginModal(props) {
                     </div>
                     <button className="log-nav-btn log-button" type="submit"> Login</button>
 
-                    <p className="log-p">You don't have an account yet? <a href="/signup">Create one here.</a></p>
+                    <p className="log-p">
+                        You don't have an account yet? <button className="toggle" onClick={() => {props.toggle()}}>Create one here.</button>
+                    </p>
                 </form>
                 </div>
                 <div className="modal-footer">

@@ -70,21 +70,21 @@ function AddTaskForm(props) {
           <input type="text" name="review" value={assignedTo} onChange={(e) => setAssinedTo(e.target.value)} />
         </div>
         <div>
-            <h4>Task Status</h4>
-            <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
-            <label htmlFor="role">To do</label>
+          <h4>Task Status</h4>
+          <input type="radio" name="myCheckbox" value="To do" onChange={handleStatus}  defaultChecked />
+          <label htmlFor="role">To do</label>
 
-            <input type="radio" name="myCheckbox" value="Doing" onChange={handleStatus} />
-            <label htmlFor="role">Doing</label>
+          <input type="radio" name="myCheckbox" value="Doing" onChange={handleStatus} />
+          <label htmlFor="role">Doing</label>
 
-            <input type="radio" name="myCheckbox" value="Merge Request" onChange={handleStatus} />
-            <label htmlFor="role">Merge Request</label>
+          <input type="radio" name="myCheckbox" value="Merge Request" onChange={handleStatus} />
+          <label htmlFor="role">Merge Request</label>
 
-            <input type="radio" name="myCheckbox" value="Blocked" onChange={handleStatus} />
-            <label htmlFor="role">Blocked</label>
+          <input type="radio" name="myCheckbox" value="Blocked" onChange={handleStatus} />
+          <label htmlFor="role">Blocked</label>
 
-            <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
-            <label htmlFor="role">Done</label>
+          <input type="radio" name="myCheckbox" value="Done" onChange={handleStatus} />
+          <label htmlFor="role">Done</label>
         </div> */}
         <div>
             <h4>Task Tag:</h4>

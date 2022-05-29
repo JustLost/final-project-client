@@ -53,6 +53,7 @@ function AddTaskModal(props) {
         setTitle("");
         //TODO: outros
         //setSprints("");
+        console.log("propssss", props)
         props.refresh();
       })
       .catch((err) => console.log(err));
@@ -205,9 +206,7 @@ function AddTaskModal(props) {
 
           <input type="radio" name="myPointsBox" value="8" onChange={(e) => setStoryPoints(e.target.value)} />
           <label htmlFor="storyPoints">8</label>
-        </div>
-
-        
+        </div>        
           <button className="button-task-add" type="submit">Add task</button>
         </form>
         </div>
